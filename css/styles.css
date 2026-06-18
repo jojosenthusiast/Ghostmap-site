@@ -17,7 +17,7 @@
 
   --text:         #eeeef5;
   --text-muted:   #8888a4;
-  --text-faint:   #44445a;
+  --text-faint:   #7a7a96;
 
   --violet:       #9b6dff;
   --violet-bright:#b794ff;
@@ -865,4 +865,54 @@ a { color: inherit; }
   .btn--lg { width: 100%; justify-content: center; }
   .hero__actions { flex-direction: column; align-items: flex-start; }
   .hero--center .hero__actions { align-items: center; }
+}
+
+/* ============================================================
+   Accessibility additions
+   ============================================================ */
+
+/* Skip-to-content link for keyboard users. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--violet);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: var(--r);
+  font-weight: 600;
+  z-index: 9999;
+}
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Visible focus styles on all interactive elements. */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav__lang:focus-visible {
+  outline: 2px solid var(--violet-bright);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Respect prefers-reduced-motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile nav scroll lock when menu is open. */
+body.nav-open {
+  overflow: hidden;
 }

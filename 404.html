@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found - GhostMap</title>
+  <meta name="description" content="The page you were looking for is not here. Head back to GhostMap." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="img/ghost-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="theme-color" content="#080810" />
+  <meta name="author" content="GhostMap contributors" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <style>
+    .err { min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; }
+    .err__code { font-family: var(--font-display); font-size: 6rem; font-weight: 800; line-height: 1; color: var(--violet-bright); margin: 0; }
+    .err__title { font-family: var(--font-display); font-size: 1.6rem; margin: 18px 0 10px; }
+    .err__desc { color: var(--text-muted); max-width: 460px; margin: 0 auto 28px; }
+    .err__links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand">
+      <img src="img/ghost-logo.png" alt="GhostMap" />
+      GhostMap
+    </a>
+    <nav>
+      <ul class="nav__links" id="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/features.html">Features</a></li>
+        <li><a href="pages/how-it-works.html">How it works</a></li>
+        <li><a href="pages/roadmap.html">Roadmap</a></li>
+        <li><a href="pages/changelog.html">Changelog</a></li>
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <a href="https://github.com/ghostmap" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--sm">Install</a>
+      <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="err">
+    <p class="err__code">404</p>
+    <h1 class="err__title">This page is not here.</h1>
+    <p class="err__desc">The URL you followed might be stale, mistyped, or just from a different timeline. Pick a known good page below.</p>
+    <div class="err__links">
+      <a href="index.html" class="btn btn--primary">Back to home</a>
+      <a href="pages/features.html" class="btn btn--outline">Features</a>
+      <a href="pages/changelog.html" class="btn btn--outline">Changelog</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom">
+      <span>MIT Licensed &middot; Made with care by developers</span>
+      <span>&copy; <span id="year">2026</span> GhostMap</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

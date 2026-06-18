@@ -1,0 +1,5 @@
+Contact: https://github.com/MarxWellB/genesis/security/advisories/new
+Contact: https://github.com/MarxWellB
+Preferred-Languages: en, es
+Canonical: https://marxwellb.github.io/Ghostmap-site/.well-known/security.txt
+Policy: https://marxwellb.github.io/Ghostmap-site/pages/terms.html

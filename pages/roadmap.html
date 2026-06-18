@@ -9,9 +9,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://marxwellb.github.io/Ghostmap-site/pages/roadmap.html" />
+  <meta name="theme-color" content="#080810" />
+  <meta name="author" content="GhostMap contributors" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GhostMap" />
+  <meta property="og:title" content="Roadmap - GhostMap" />
+  <meta property="og:description" content="What ships in V1 today and the V2 vision: Ghost Comments, Ghost Threads, Ghost Graph, Ghost Watcher." />
+  <meta property="og:url" content="https://marxwellb.github.io/Ghostmap-site/pages/roadmap.html" />
+  <meta property="og:image" content="../img/ghost-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Roadmap - GhostMap" />
+  <meta name="twitter:description" content="What ships in V1 today and the V2 vision: Ghost Comments, Ghost Threads, Ghost Graph, Ghost Watcher." />
+  <meta name="twitter:image" content="../img/ghost-logo.png" />
+
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
 
 <header class="nav">
   <div class="container nav__inner">
@@ -20,7 +40,7 @@
       GhostMap
     </a>
     <nav>
-      <ul class="nav__links">
+      <ul class="nav__links" id="primary-nav">
         <li><a href="../index.html">Home</a></li>
         <li><a href="features.html">Features</a></li>
         <li><a href="how-it-works.html">How it works</a></li>
@@ -33,14 +53,14 @@
       <a href="es/roadmap.html" class="nav__lang">ES</a>
       <a href="https://github.com/ghostmap" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
       <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--sm">Install</a>
-      <button class="nav__mobile-toggle" aria-label="Menu">
+      <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <section class="hero hero--center">
     <div class="container">
@@ -256,7 +276,7 @@
     </div>
     <div class="footer__bottom">
       <span>MIT Licensed · Made with 💜 by developers</span>
-      <span>© 2026 GhostMap</span>
+      <span>© <span id="year">2026</span> GhostMap</span>
     </div>
   </div>
 </footer>

@@ -9,9 +9,56 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://marxwellb.github.io/Ghostmap-site/" />
+  <meta name="theme-color" content="#080810" />
+  <meta name="author" content="GhostMap contributors" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GhostMap" />
+  <meta property="og:title" content="GhostMap - Your code, mapped." />
+  <meta property="og:description" content="A live, navigable map of your code inside VS Code. 19 languages. @ghost annotations. Zero telemetry." />
+  <meta property="og:url" content="https://marxwellb.github.io/Ghostmap-site/" />
+  <meta property="og:image" content="img/ghost-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GhostMap - Your code, mapped." />
+  <meta name="twitter:description" content="A live, navigable map of your code inside VS Code. 19 languages. @ghost annotations. Zero telemetry." />
+  <meta name="twitter:image" content="img/ghost-logo.png" />
+
   <link rel="stylesheet" href="css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "GhostMap",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Windows, macOS, Linux",
+    "description": "A live, navigable map of your code inside VS Code. 19 languages. @ghost annotations. Zero telemetry.",
+    "url": "https://marxwellb.github.io/Ghostmap-site/",
+    "downloadUrl": "https://github.com/MarxWellB/genesis/releases",
+    "softwareVersion": "0.5.0",
+    "softwareRequirements": "Visual Studio Code 1.85 or higher",
+    "license": "https://opensource.org/licenses/MIT",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "GhostMap contributors",
+      "url": "https://github.com/MarxWellB/genesis"
+    },
+    "isAccessibleForFree": true
+  }
+  </script>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
 
 <!-- ═══ NAV ═══════════════════════════════════════════════ -->
 <header class="nav">
@@ -21,7 +68,7 @@
       GhostMap
     </a>
     <nav>
-      <ul class="nav__links">
+      <ul class="nav__links" id="primary-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="pages/features.html">Features</a></li>
         <li><a href="pages/how-it-works.html">How it works</a></li>
@@ -40,7 +87,7 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2 9 9 4.5 6 2 7.5v9L4.5 18 9 15l8 7 5-2.4V4.4ZM9 14.2 5 11.5v-3L9 9.8Zm8 4.3-5.9-5.2L17 7.5Z"/></svg>
         Install for VS Code
       </a>
-      <button class="nav__mobile-toggle" aria-label="Menu">
+      <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
@@ -48,7 +95,7 @@
 </header>
 
 <!-- ═══ HERO ═══════════════════════════════════════════════ -->
-<main>
+<main id="main">
   <div class="container">
     <div class="hero-split">
       <div class="hero-split__content">
@@ -288,7 +335,7 @@
         <h2 class="section__title">What GhostMap looks like in your editor</h2>
       </div>
       <div class="feat-hero-screenshot ghost-glow" style="max-width:900px;margin:0 auto">
-        <img src="img/screenshot-vscode.png" alt="GhostMap running in VS Code showing the Ghost Tree panel with multiple languages" />
+        <img src="img/screenshot-vscode.png" loading="lazy" decoding="async" width="1800" height="1100" alt="GhostMap running in VS Code showing the Ghost Tree panel with multiple languages" />
       </div>
     </div>
   </section>
@@ -418,7 +465,7 @@
     </div>
     <div class="footer__bottom">
       <span>MIT Licensed · Made with 💜 by developers</span>
-      <span>© 2026 GhostMap</span>
+      <span>© <span id="year">2026</span> GhostMap</span>
     </div>
   </div>
 </footer>
