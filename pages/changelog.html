@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog — GhostMap</title>
+  <meta name="description" content="GhostMap version history. Every fix, every feature, every round." />
+  <link rel="icon" type="image/png" href="../img/ghost-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .cl-entry { border-left: 2px solid var(--border); padding-left: 28px; margin-bottom: 48px; position: relative; }
+    .cl-entry::before { content: ''; position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--violet); }
+    .cl-entry--current::before { background: var(--green); box-shadow: 0 0 0 3px rgba(74,222,128,0.2); }
+    .cl-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .cl-version { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; }
+    .cl-date { font-size: 0.8rem; color: var(--text-faint); }
+    .cl-badge { font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+    .cl-badge--current { background: rgba(74,222,128,0.12); color: var(--green); }
+    .cl-badge--pre { background: var(--violet-dim); color: var(--violet-bright); }
+    .cl-items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .cl-items li { display: flex; gap: 10px; font-size: 0.9rem; color: var(--text-muted); }
+    .cl-items li::before { content: '→'; color: var(--violet); flex-shrink: 0; }
+    .cl-section { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); margin: 16px 0 8px; }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="../index.html" class="nav__brand">
+      <img src="../img/ghost-logo.png" alt="GhostMap" />
+      GhostMap
+    </a>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="https://docs.ghostmap.dev" target="_blank" rel="noopener">Docs ↗</a></li>
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <a href="es/changelog.html" class="nav__lang">ES</a>
+      <a href="https://github.com/ghostmap" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--sm">Install</a>
+      <button class="nav__mobile-toggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero hero--center">
+    <div class="container">
+      <div class="hero__eyebrow"><span class="dot"></span> Changelog</div>
+      <h1>Every change,<br /><em>documented.</em></h1>
+      <p class="hero__sub">GhostMap is developed in public. Every fix and feature is logged here with the reasoning behind it.</p>
+    </div>
+  </section>
+
+  <section class="section section--bordered">
+    <div class="container" style="max-width: 760px">
+
+      <!-- Round 6 -->
+      <div class="cl-entry cl-entry--current">
+        <div class="cl-meta">
+          <span class="cl-version">Round 6</span>
+          <span class="cl-date">June 17, 2026</span>
+          <span class="cl-badge cl-badge--current">Current</span>
+        </div>
+
+        <div class="cl-section">Fixes</div>
+        <ul class="cl-items">
+          <li><strong>C# constructors</strong> — K&R and Allman constructors now appear in the Ghost Tree. Added pattern with <code style="font-size:0.82em;color:var(--violet)">[A-Z]</code> anchor to distinguish from method calls.</li>
+          <li><strong>PHP method recognition</strong> — Day-1 regex bug: <code style="font-size:0.82em;color:var(--violet)">public function foo()</code> was invisible in large PHP files because only <code style="font-size:0.82em;color:var(--violet)">static</code> consumed its trailing space. All modifiers now handle whitespace uniformly.</li>
+          <li><strong>C# <code style="font-size:0.82em;color:var(--violet)">var</code> fields</strong> — Class-level <code style="font-size:0.82em;color:var(--violet)">var</code> declarations now appear. Local variables inside method bodies are correctly suppressed.</li>
+          <li><strong>Status badge in TreeView title</strong> — GhostMap now shows <code style="font-size:0.82em;color:var(--violet)">[loading]</code>, <code style="font-size:0.82em;color:var(--violet)">[cached]</code>, <code style="font-size:0.82em;color:var(--violet)">[stale-cache]</code>, and discard reasons directly in the panel header.</li>
+          <li><strong>Restored <code style="font-size:0.82em;color:var(--violet)">setLoading()</code></strong> — A previous round removed what seemed like a redundant call; it wasn't. Stale-cached trees no longer appear as "complete" while a refresh runs.</li>
+          <li><strong>Removed background fingerprint validator</strong> — The round-5 attempt used synchronous file IO on the Extension Host main thread, causing 2–10 s freezes under RAM pressure. Removed. Optimistic trust + lazy mismatch detection remains.</li>
+        </ul>
+      </div>
+
+      <!-- Round 5 -->
+      <div class="cl-entry">
+        <div class="cl-meta">
+          <span class="cl-version">Round 5</span>
+          <span class="cl-date">June 17, 2026</span>
+          <span class="cl-badge cl-badge--pre">Pre-release</span>
+        </div>
+
+        <div class="cl-section">Performance</div>
+        <ul class="cl-items">
+          <li><strong>LSP timeout reduced</strong> — 1500 ms → 800 ms. Halves the cold-LSP stall on first open.</li>
+          <li><strong>Small-file fast path</strong> — Files under 500 lines with an active LSP skip Tree-sitter + regex entirely, saving up to 1.2 s of WASM load.</li>
+          <li><strong>Cold-start fast path (Ghost Index)</strong> — Persisted snapshots now load as trusted on activate. First open of a known file: tree paints in &lt;50 ms instead of 5–35 s.</li>
+          <li><strong>Tiny file bypass</strong> — Files under 50 lines skip the 200 ms tab-spam backpressure window.</li>
+          <li><strong>Lazy LSP warm-up</strong> — GhostMap pre-warms the active language server on activate, then staggered warm-ups for other visible editors after 2 s idle.</li>
+        </ul>
+
+        <div class="cl-section">Fixes</div>
+        <ul class="cl-items">
+          <li><strong>Live scanner references</strong> — Parent class arrows were missing in 60 k-line C#/Java files after the scanner mutated item ranges and callers held stale clones. Scanner now exposes live references.</li>
+          <li><strong>Trailing comment backtrack</strong> — Comments between two methods were absorbed into the previous block's range. Fixed for Python, Ruby, Julia, Elixir.</li>
+          <li><strong><code style="font-size:0.82em;color:var(--violet)">const</code> / <code style="font-size:0.82em;color:var(--violet)">let</code> arrow functions</strong> — <code style="font-size:0.82em;color:var(--violet)">const fetch = () => {}</code> was invisible in JS/TS/TSX. Fixed with a dedicated pattern.</li>
+          <li><strong>Multi-line string state</strong> — PHP heredocs, JS template literals, Java text blocks now tracked across lines. Braces inside strings no longer desync the frame stack.</li>
+          <li><strong>Tab-switch race condition</strong> — A slow LSP call no longer pays the full 800 ms timeout after the user switches tabs. The wait polls every 50 ms and aborts immediately.</li>
+        </ul>
+      </div>
+
+      <!-- Round 4 -->
+      <div class="cl-entry">
+        <div class="cl-meta">
+          <span class="cl-version">Round 4</span>
+          <span class="cl-date">June 17, 2026</span>
+          <span class="cl-badge cl-badge--pre">Pre-release</span>
+        </div>
+
+        <div class="cl-section">Nesting correctness</div>
+        <ul class="cl-items">
+          <li><strong>Allman brace support</strong> — C#, Java, C++, C, Go: methods with the opening brace on a separate line now appear correctly nested.</li>
+          <li><strong>Multi-line method signatures</strong> — TS, Java: methods with arguments spread across multiple lines are detected.</li>
+          <li><strong>Python / Ruby / Julia / Elixir nesting</strong> — Indent-stack tracker added. Indent-based languages now produce nested trees, not flat lists.</li>
+          <li><strong>Pending body FIFO queue</strong> — Two declarations queued before a <code style="font-size:0.82em;color:var(--violet)">{</code> no longer overwrite each other.</li>
+          <li><strong>Anonymous frame guard</strong> — <code style="font-size:0.82em;color:var(--violet)">const x = { run() {} }</code> no longer produces a spurious <code style="font-size:0.82em;color:var(--violet)">run</code> in the tree.</li>
+          <li><strong>Native LSP hierarchy preservation</strong> — LSP-provided children are no longer thrown away during the flatten + rebuild round trip.</li>
+        </ul>
+
+        <div class="cl-section">Testing infrastructure</div>
+        <ul class="cl-items">
+          <li>Added mocha + chai + ts-node test harness with a hand-written VS Code stub.</li>
+          <li>84-cell icon matrix, 6-fixture nesting matrix, 4-cell anchor matrix.</li>
+          <li>139 tests passing at end of round 4.</li>
+        </ul>
+      </div>
+
+      <!-- v1-coalesce-publish -->
+      <div class="cl-entry">
+        <div class="cl-meta">
+          <span class="cl-version">v1-coalesce-publish</span>
+          <span class="cl-date">June 2026</span>
+          <span class="cl-badge cl-badge--pre">Pre-release</span>
+        </div>
+        <ul class="cl-items">
+          <li><strong>Publish coalescer</strong> — 87% fewer TreeView event fires during a 60 k-line progressive scan.</li>
+          <li><strong>Progressive scanner</strong> — Regex-based scanner for large files, batch-yielding via <code style="font-size:0.82em;color:var(--violet)">setImmediate</code> to keep the editor responsive. C++ 60 k scan: from ~19.5 s to ~33 ms.</li>
+          <li><strong>Resumable scan</strong> — Mid-scan tab switches no longer discard minutes of partial work.</li>
+          <li><strong>SHA-256 cache fast path</strong> — Tab switch to a warm-cached file skips fingerprinting entirely.</li>
+          <li><strong>Local state persistence</strong> — <code style="font-size:0.82em;color:var(--violet)">.ghostmap/</code> snapshot file introduced.</li>
+        </ul>
+      </div>
+
+      <!-- Baseline -->
+      <div class="cl-entry">
+        <div class="cl-meta">
+          <span class="cl-version">Pre-V1 baseline</span>
+          <span class="cl-date">June 13, 2026</span>
+        </div>
+        <ul class="cl-items">
+          <li>Initial GhostMap extension: TreeView wired, <code style="font-size:0.82em;color:var(--violet)">@ghost</code> annotation parser, foreground refresh scheduling.</li>
+          <li>Basic anchor types: contextual, named, range.</li>
+          <li>MIT license. First commit.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-block">
+    <div class="container">
+      <h2>See the full iteration log.</h2>
+      <p>Every round is documented in detail in the docs — rationale, files touched, and tests that lock the behaviour in.</p>
+      <a href="https://docs.ghostmap.dev" class="btn btn--outline btn--lg">Read the docs →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><img src="../img/ghost-logo.png" alt="GhostMap" /> GhostMap</div>
+        <p class="footer__tagline">Turn code annotations into project maps.</p>
+      </div>
+      <div class="footer__col"><h4>Product</h4><ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Resources</h4><ul>
+        <li><a href="https://docs.ghostmap.dev">Documentation</a></li>
+        <li><a href="https://docs.ghostmap.dev/get-started/instalacion">Quick start</a></li>
+        <li><a href="https://docs.ghostmap.dev/reference/sintaxis">Syntax reference</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Community</h4><ul>
+        <li><a href="https://github.com/ghostmap" target="_blank">GitHub</a></li>
+        <li><a href="https://github.com/ghostmap/discussions" target="_blank">Discussions</a></li>
+        <li><a href="https://github.com/ghostmap/issues" target="_blank">Issues</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>MIT Licensed · Made with 💜 by developers</span>
+      <span>© 2026 GhostMap</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

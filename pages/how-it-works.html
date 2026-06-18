@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How it works — GhostMap</title>
+  <meta name="description" content="Learn how GhostMap transforms @ghost annotations into a live project map. From symbols to Ghost Tree in four steps." />
+  <link rel="icon" type="image/png" href="../img/ghost-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="../index.html" class="nav__brand">
+      <img src="../img/ghost-logo.png" alt="GhostMap" />
+      GhostMap
+    </a>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="https://docs.ghostmap.dev" target="_blank" rel="noopener">Docs ↗</a></li>
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <a href="es/how-it-works.html" class="nav__lang">ES</a>
+      <a href="https://github.com/ghostmap" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--sm">Install</a>
+      <button class="nav__mobile-toggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero hero--center">
+    <div class="container">
+      <div class="hero__eyebrow"><span class="dot"></span> How it works</div>
+      <h1>Code → Symbols →<br /><em>Ghost Tree.</em></h1>
+      <p class="hero__sub">
+        GhostMap works in layers. Each layer builds on the previous one —
+        the model is consistent whether you open a 10-line file or a 60,000-line one.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ THE MODEL ═════════════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <div class="section__label">The Model</div>
+        <h2 class="section__title">Four layers. One tree.</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">01</div>
+          <div class="step__tag">Ghost Engine</div>
+          <h3>Symbol extraction</h3>
+          <p>GhostMap reads your file and extracts every meaningful symbol: classes, functions, interfaces, structs, enums. It uses LSP first, then Tree-sitter WASM, then regex fallback — whichever gives the best result for your language.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">02</div>
+          <div class="step__tag">@ghost annotations</div>
+          <h3>Anchor parsing</h3>
+          <p>Every <code style="font-size:0.85em;color:var(--violet)">@ghost</code> comment in the file is parsed: description, status, name, range markers. Contextual anchors attach to the nearest symbol. Named anchors and Ghost Ranges create independent nodes.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">03</div>
+          <div class="step__tag">Hierarchy builder</div>
+          <h3>Tree construction</h3>
+          <p>Symbols and anchors are organized into a hierarchy by range containment — if a symbol starts inside a Range, it becomes a child of that Range. The result is a tree that reflects your code's actual structure.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:2px;background:var(--surface);border:1px solid var(--border);border-radius:0 0 var(--r-lg) var(--r-lg);padding:28px;display:flex;align-items:flex-start;gap:16px">
+        <div style="flex-shrink:0;width:38px;height:38px;border-radius:9px;background:var(--violet-dim);display:flex;align-items:center;justify-content:center;color:var(--violet-bright)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg>
+        </div>
+        <div>
+          <div class="step__tag" style="margin-bottom:8px">Ghost Index</div>
+          <strong style="font-family:var(--font-display);font-size:0.95rem">Snapshot &amp; instant reload</strong>
+          <p style="margin:6px 0 0;font-size:0.88rem;color:var(--text-muted)">After the first analysis, GhostMap persists the complete tree into the Ghost Index — a local snapshot fingerprinted with the file's content hash. Every subsequent open loads from this snapshot in milliseconds, with zero LSP work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ THREE ANCHOR TYPES ════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__label">Ghost Anchors</div>
+        <h2 class="section__title">Three ways to annotate.</h2>
+        <p class="section__desc">Pick the right anchor for what you're describing. Each type creates a different kind of node in the Ghost Tree.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+
+        <div class="panel">
+          <div class="panel__bar">
+            <div class="panel__dots"><span class="panel__dot panel__dot--r"></span><span class="panel__dot panel__dot--y"></span><span class="panel__dot panel__dot--g"></span></div>
+            <span class="panel__title">Contextual Anchor</span>
+          </div>
+          <div class="panel__body">
+            <div class="code">
+<span class="line"><span class="gh">// @ghost description:</span></span>
+<span class="line"><span class="gh">// validate jwt | status: <span class="gs">review</span></span></span>
+<span class="line"><span class="fn">function</span> <span class="fn">login</span>() {}</span>
+            </div>
+            <p style="margin:16px 0 0;font-size:0.86rem;color:var(--text-muted)">
+              No name. Attaches silently to the nearest symbol within the ownership radius (default: 5 lines). The description and status appear on <code style="font-size:0.82em;color:var(--violet)">login</code> in the tree.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__bar">
+            <div class="panel__dots"><span class="panel__dot panel__dot--r"></span><span class="panel__dot panel__dot--y"></span><span class="panel__dot panel__dot--g"></span></div>
+            <span class="panel__title">Named Anchor</span>
+          </div>
+          <div class="panel__body">
+            <div class="code">
+<span class="line"><span class="gh">// @ghost <span style="color:var(--green)">#security</span></span></span>
+<span class="line"><span class="gh">// description: audit JWT</span></span>
+<span class="line"><span class="gh">// status: <span class="gs">todo</span></span></span>
+            </div>
+            <p style="margin:16px 0 0;font-size:0.86rem;color:var(--text-muted)">
+              Has a <code style="font-size:0.82em;color:var(--violet)">#name</code>. Creates an independent node in the tree — doesn't need a symbol nearby. Good for notes, open questions, or flagging a section of a file.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__bar">
+            <div class="panel__dots"><span class="panel__dot panel__dot--r"></span><span class="panel__dot panel__dot--y"></span><span class="panel__dot panel__dot--g"></span></div>
+            <span class="panel__title">Ghost Range</span>
+          </div>
+          <div class="panel__body">
+            <div class="code">
+<span class="line"><span class="gh">// @ghost <span style="color:var(--green)">#refactor</span> start</span></span>
+<span class="line"><span class="gh">// description: split service</span></span>
+<span class="line"><span class="cm">... code ...</span></span>
+<span class="line"><span class="gh">// @ghost end</span></span>
+            </div>
+            <p style="margin:16px 0 0;font-size:0.86rem;color:var(--text-muted)">
+              A named anchor that owns everything between <code style="font-size:0.82em;color:var(--violet)">start</code> and <code style="font-size:0.82em;color:var(--violet)">end</code>. All symbols inside become children of this node in the tree.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATUS SYSTEM ═════════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__label">Status System</div>
+        <h2 class="section__title">Track work state in the tree.</h2>
+        <p class="section__desc">Every anchor can carry a status. Filter the Ghost Tree by status to see only what's pending, in review, or done.</p>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px">
+        <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 16px;font-family:var(--font-mono);font-size:0.82rem">
+          <span class="tree-row__badge badge--todo" style="margin:0">todo</span>
+          <span style="color:var(--text-muted)">— work hasn't started</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 16px;font-family:var(--font-mono);font-size:0.82rem">
+          <span class="tree-row__badge badge--progress" style="margin:0">in-progress</span>
+          <span style="color:var(--text-muted)">— actively being worked on</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 16px;font-family:var(--font-mono);font-size:0.82rem">
+          <span class="tree-row__badge badge--review" style="margin:0">review</span>
+          <span style="color:var(--text-muted)">— waiting for review</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 16px;font-family:var(--font-mono);font-size:0.82rem">
+          <span class="tree-row__badge badge--done" style="margin:0">done</span>
+          <span style="color:var(--text-muted)">— resolved, no action needed</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 16px;font-family:var(--font-mono);font-size:0.82rem">
+          <span style="font-size:0.75rem;color:var(--red);font-weight:700;background:rgba(248,113,113,0.12);padding:1px 6px;border-radius:4px">blocked</span>
+          <span style="color:var(--text-muted)">— waiting on something external</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 16px;font-family:var(--font-mono);font-size:0.82rem">
+          <span style="font-size:0.75rem;color:var(--text-muted);font-weight:700;background:var(--surface-2);padding:1px 6px;border-radius:4px">pending</span>
+          <span style="color:var(--text-muted)">— scheduled but not started</span>
+        </div>
+      </div>
+
+      <div style="padding:20px 24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);font-size:0.88rem;color:var(--text-muted)">
+        Status values are normalized automatically: lowercased, trimmed, and spaces converted to hyphens (<code style="font-size:0.82em;color:var(--violet)">in progress</code> → <code style="font-size:0.82em;color:var(--violet)">in-progress</code>). If you use a value GhostMap doesn't recognize, it offers a quick fix with the closest match.
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-block">
+    <div class="container">
+      <h2>Try it on your own project.</h2>
+      <p>Install takes 10 seconds. Your first <code style="font-size:0.9em;color:var(--violet)">@ghost</code> takes 5.</p>
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+        <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--lg">Install for VS Code</a>
+        <a href="https://docs.ghostmap.dev/get-started/primeros-5-minutos" class="btn btn--outline btn--lg">5-minute guide →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><img src="../img/ghost-logo.png" alt="GhostMap" /> GhostMap</div>
+        <p class="footer__tagline">Turn code annotations into project maps.</p>
+      </div>
+      <div class="footer__col"><h4>Product</h4><ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Resources</h4><ul>
+        <li><a href="https://docs.ghostmap.dev">Documentation</a></li>
+        <li><a href="https://docs.ghostmap.dev/get-started/instalacion">Quick start</a></li>
+        <li><a href="https://docs.ghostmap.dev/reference/sintaxis">Syntax reference</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Community</h4><ul>
+        <li><a href="https://github.com/ghostmap" target="_blank">GitHub</a></li>
+        <li><a href="https://github.com/ghostmap/discussions" target="_blank">Discussions</a></li>
+        <li><a href="https://github.com/ghostmap/issues" target="_blank">Issues</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>MIT Licensed · Made with 💜 by developers</span>
+      <span>© 2026 GhostMap</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

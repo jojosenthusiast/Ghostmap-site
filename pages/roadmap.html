@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roadmap — GhostMap</title>
+  <meta name="description" content="GhostMap roadmap: what's in V1, what's coming in V2 — Ghost Comments, Ghost Threads, Ghost Graph, and more." />
+  <link rel="icon" type="image/png" href="../img/ghost-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="../index.html" class="nav__brand">
+      <img src="../img/ghost-logo.png" alt="GhostMap" />
+      GhostMap
+    </a>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="https://docs.ghostmap.dev" target="_blank" rel="noopener">Docs ↗</a></li>
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <a href="es/roadmap.html" class="nav__lang">ES</a>
+      <a href="https://github.com/ghostmap" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--sm">Install</a>
+      <button class="nav__mobile-toggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero hero--center">
+    <div class="container">
+      <div class="hero__eyebrow"><span class="dot"></span> Roadmap</div>
+      <h1>V1 is shipping.<br /><em>V2 is the vision.</em></h1>
+      <p class="hero__sub">
+        GhostMap V1 is a focused, free tool for any developer.
+        V2 adds intelligence, collaboration, and team features —
+        built on the same model, not a different product.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ V1 ════════════════════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__label">V1 — Available now</div>
+        <h2 class="section__title">The foundation.</h2>
+        <p class="section__desc">Everything in V1 is free and open source. It works for any developer, on any codebase, without an account.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+        <div class="feat-card">
+          <h3>Ghost Tree <span class="feat-card__tag">shipped</span></h3>
+          <p>Live symbol map of any file. Classes, functions, interfaces — organized by real code structure, not folder names.</p>
+        </div>
+        <div class="feat-card">
+          <h3>Ghost Ranges <span class="feat-card__tag">shipped</span></h3>
+          <p>Named code sections that own everything inside. The cleanest way to mark a refactor, a migration, or a hot zone.</p>
+        </div>
+        <div class="feat-card">
+          <h3>Ghost Anchors <span class="feat-card__tag">shipped</span></h3>
+          <p>Contextual (attaches to nearest symbol) and named (independent node). Both carry description and status.</p>
+        </div>
+        <div class="feat-card">
+          <h3>Ghost Index <span class="feat-card__tag">shipped</span></h3>
+          <p>Loading engine that persists the tree between sessions. Open a file: the tree is there instantly.</p>
+        </div>
+        <div class="feat-card">
+          <h3>Ghost Engine <span class="feat-card__tag">shipped</span></h3>
+          <p>Language extraction stack: LSP → Tree-sitter WASM → regex fallback. 19 languages. Always produces a tree.</p>
+        </div>
+        <div class="feat-card">
+          <h3>Diagnostics <span class="feat-card__tag">shipped</span></h3>
+          <p>Unclosed ranges, detached anchors, invalid status, malformed syntax — caught as you type with one-click fixes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ V2 ════════════════════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__label">V2 — Vision</div>
+        <h2 class="section__title">The next layer.</h2>
+        <p class="section__desc">
+          V2 builds on V1's model. The same Ghost Tree, the same vocabulary —
+          extended with intelligence and collaboration.
+          V1 Core stays free. V2 introduces an Enterprise tier for teams.
+        </p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:2px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border)">
+
+        <div style="background:var(--surface);padding:32px;border-bottom:1px solid var(--border)">
+          <div style="display:flex;align-items:flex-start;gap:20px">
+            <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:var(--violet-dim);display:flex;align-items:center;justify-content:center;color:var(--violet-bright)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 10a1 1 0 0 1 1-1h0a1 1 0 0 1 1 1v0a1 1 0 0 1-1 1h0a1 1 0 0 1-1-1Z"/><path d="M5 21V8a7 7 0 0 1 14 0v13l-3.5-2L12 21l-2.5-2Z"/></svg>
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-display);margin:0 0 8px;font-size:1.1rem;display:flex;align-items:center;gap:10px">
+                Ghost Comments
+                <span class="vision-tag">invisible annotations</span>
+              </h3>
+              <p style="margin:0;color:var(--text-muted);font-size:0.9rem;max-width:680px">
+                In V1, <code style="font-size:0.85em;color:var(--violet)">@ghost</code> annotations live as comment lines in your source code.
+                In V2, they move out of the file entirely — stored in the Ghost Index — and VS Code renders them
+                as invisible overlays. Your code stays clean. A migration engine converts existing V1 annotations automatically.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface);padding:32px;border-bottom:1px solid var(--border)">
+          <div style="display:flex;align-items:flex-start;gap:20px">
+            <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:var(--violet-dim);display:flex;align-items:center;justify-content:center;color:var(--violet-bright)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-display);margin:0 0 8px;font-size:1.1rem;display:flex;align-items:center;gap:10px">
+                Ghost Threads
+                <span class="vision-tag">code discussions</span>
+              </h3>
+              <p style="margin:0;color:var(--text-muted);font-size:0.9rem;max-width:680px">
+                Conversations tied to a specific block of code. Not a global chat — a focused thread attached to exactly the function, class, or Ghost Range it's about. Decisions, open questions, architectural rationale — where they belong. Slack context flows in automatically; GhostMap surfaces reminders when related code is touched.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface);padding:32px;border-bottom:1px solid var(--border)">
+          <div style="display:flex;align-items:flex-start;gap:20px">
+            <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:var(--violet-dim);display:flex;align-items:center;justify-content:center;color:var(--violet-bright)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-display);margin:0 0 8px;font-size:1.1rem;display:flex;align-items:center;gap:10px">
+                Ghost Graph
+                <span class="vision-tag">code flow</span>
+              </h3>
+              <p style="margin:0;color:var(--text-muted);font-size:0.9rem;max-width:680px">
+                Visual maps tracing how code flows: a variable declared here, used there, passed to this function, returned from that one. Ghost Graph follows the path from definition to last usage — across files — and renders it as a navigable graph. Built for understanding unfamiliar code fast.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface);padding:32px;border-bottom:1px solid var(--border)">
+          <div style="display:flex;align-items:flex-start;gap:20px">
+            <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:var(--violet-dim);display:flex;align-items:center;justify-content:center;color:var(--violet-bright)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-display);margin:0 0 8px;font-size:1.1rem;display:flex;align-items:center;gap:10px">
+                Agile integration
+                <span class="vision-tag">enterprise</span>
+              </h3>
+              <p style="margin:0;color:var(--text-muted);font-size:0.9rem;max-width:680px">
+                Status changes in GhostMap flow to Jira (and other trackers). Sprint timelines surface in the Ghost Tree as urgency signals. When a review passes, GhostMap commits automatically and updates the relevant anchor — the developer doesn't have to push anything manually. Scrum workflow built into the tool, not bolted on top.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface);padding:32px">
+          <div style="display:flex;align-items:flex-start;gap:20px">
+            <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:var(--violet-dim);display:flex;align-items:center;justify-content:center;color:var(--violet-bright)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-display);margin:0 0 8px;font-size:1.1rem;display:flex;align-items:center;gap:10px">
+                AI descriptions &amp; suggestions
+                <span class="vision-tag">enterprise</span>
+              </h3>
+              <p style="margin:0;color:var(--text-muted);font-size:0.9rem;max-width:680px">
+                Descriptions generated automatically for undocumented symbols. GhostMap reads the code, writes the annotation. Suggestions for Ghost Ranges on dense files. Context-aware reminders based on what's in Ghost Threads and what's pending in the tree.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COMPATIBILITY NOTE ════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container" style="max-width:720px">
+      <div class="section__label">V1 → V2 Migration</div>
+      <h2 class="section__title" style="font-size:1.6rem">Your V1 annotations are safe.</h2>
+      <p style="color:var(--text-muted);margin-bottom:20px">
+        When V2 ships, GhostMap will include a migration engine that converts existing
+        <code style="font-size:0.88em;color:var(--violet)">@ghost</code> comment lines into invisible Ghost Comments stored in the Ghost Index.
+        The conversion is automatic. Your code gets cleaner; your annotations stay intact.
+      </p>
+      <p style="color:var(--text-muted)">
+        The V2 Ghost Engine will be a superset of V1 — same syntax, same vocabulary, same tree model.
+        Every concept you learn today carries forward.
+      </p>
+    </div>
+  </section>
+
+  <section class="cta-block">
+    <div class="container">
+      <h2>Start with V1 today.</h2>
+      <p>Free forever. Everything you need to map your project right now.</p>
+      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--lg">Install for VS Code</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><img src="../img/ghost-logo.png" alt="GhostMap" /> GhostMap</div>
+        <p class="footer__tagline">Turn code annotations into project maps.</p>
+      </div>
+      <div class="footer__col"><h4>Product</h4><ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Resources</h4><ul>
+        <li><a href="https://docs.ghostmap.dev">Documentation</a></li>
+        <li><a href="https://docs.ghostmap.dev/get-started/instalacion">Quick start</a></li>
+        <li><a href="https://docs.ghostmap.dev/reference/sintaxis">Syntax reference</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Community</h4><ul>
+        <li><a href="https://github.com/ghostmap" target="_blank">GitHub</a></li>
+        <li><a href="https://github.com/ghostmap/discussions" target="_blank">Discussions</a></li>
+        <li><a href="https://github.com/ghostmap/issues" target="_blank">Issues</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>MIT Licensed · Made with 💜 by developers</span>
+      <span>© 2026 GhostMap</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

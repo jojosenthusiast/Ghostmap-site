@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — GhostMap</title>
+  <meta name="description" content="Everything GhostMap can do: Ghost Tree, Ghost Ranges, Ghost Anchors, Ghost Index, diagnostics, and multi-language support." />
+  <link rel="icon" type="image/png" href="../img/ghost-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="../index.html" class="nav__brand">
+      <img src="../img/ghost-logo.png" alt="GhostMap" />
+      GhostMap
+    </a>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="https://docs.ghostmap.dev" target="_blank" rel="noopener">Docs ↗</a></li>
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <a href="es/features.html" class="nav__lang">ES</a>
+      <a href="https://github.com/ghostmap" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2 9 9 4.5 6 2 7.5v9L4.5 18 9 15l8 7 5-2.4V4.4ZM9 14.2 5 11.5v-3L9 9.8Zm8 4.3-5.9-5.2L17 7.5Z"/></svg>
+        Install
+      </a>
+      <button class="nav__mobile-toggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero hero--center">
+    <div class="container">
+      <div class="hero__eyebrow"><span class="dot"></span> Features</div>
+      <h1>Everything in one<br /><em>coherent system.</em></h1>
+      <p class="hero__sub">
+        GhostMap isn't a collection of independent tools. Every feature is part of the same model:
+        code → symbols → annotations → tree.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ GHOST TREE ════════════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="split-demo">
+        <div class="split-demo__text">
+          <div class="section__label">Ghost Tree</div>
+          <h2>The map of your file, always up to date.</h2>
+          <p>
+            GhostMap builds a symbol-first hierarchy from your code: classes, functions,
+            interfaces, structs. Then it layers your <code style="font-size:0.85em;color:var(--violet)">@ghost</code> annotations
+            on top as anchors with status and description.
+          </p>
+          <p>
+            The result is a navigable tree that reflects real structure — not what you
+            named your folders, not what you remember. Click any node to jump directly
+            to that line.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px">
+            <a href="https://docs.ghostmap.dev/guide/symbol" class="concept-link">Ghost Symbol</a>
+            <a href="https://docs.ghostmap.dev/guide/anchor" class="concept-link">Ghost Anchor</a>
+            <a href="https://docs.ghostmap.dev/reference/ghost-tree" class="concept-link">Ghost Tree ref</a>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__bar">
+            <div class="panel__dots">
+              <span class="panel__dot panel__dot--r"></span>
+              <span class="panel__dot panel__dot--y"></span>
+              <span class="panel__dot panel__dot--g"></span>
+            </div>
+            <span class="panel__title">GHOSTMAP — Filter · Reset · Search</span>
+          </div>
+          <div class="panel__body">
+            <div class="tree">
+              <div class="tree-row">
+                <svg class="icon-a" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21 12 16 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg>
+                <span class="tree-row__name">#auth-refactor</span>
+                <span class="tree-row__badge badge--progress">in-progress</span>
+              </div>
+              <div class="tree-row tree-row--i1">
+                <svg class="icon-c" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <span class="tree-row__name">AuthService</span>
+              </div>
+              <div class="tree-row tree-row--i2">
+                <svg class="icon-ch" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg>
+                <svg class="icon-f" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/></svg>
+                <span class="tree-row__name">login</span>
+              </div>
+              <div class="tree-row tree-row--i3">
+                <svg class="icon-a" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21 12 16 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg>
+                <span>validate tokens</span>
+                <span class="tree-row__badge badge--review">review</span>
+              </div>
+              <div class="tree-row tree-row--i3">
+                <svg class="icon-a" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21 12 16 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg>
+                <span>rate limit</span>
+                <span class="tree-row__badge badge--todo">todo</span>
+              </div>
+              <div class="tree-row tree-row--i2">
+                <svg class="icon-ch" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg>
+                <svg class="icon-f" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/></svg>
+                <span class="tree-row__name">logout</span>
+              </div>
+              <div class="tree-row tree-row--i3">
+                <svg class="icon-a" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21 12 16 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg>
+                <span>revoke session</span>
+                <span class="tree-row__badge badge--done">done</span>
+              </div>
+              <div class="tree-row tree-row--i1">
+                <svg class="icon-c" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <span class="tree-row__name">TokenService</span>
+              </div>
+              <div class="tree-row tree-row--i2">
+                <svg class="icon-ch" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg>
+                <svg class="icon-f" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/></svg>
+                <span class="tree-row__name">rotate</span>
+                <span class="tree-row__badge badge--progress">in-progress</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GHOST RANGES ══════════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="split-demo split-demo--reverse">
+        <div class="split-demo__text">
+          <div class="section__label">Ghost Ranges</div>
+          <h2>Name a section of code.<br />Own it in the tree.</h2>
+          <p>
+            Wrap any block of code between <code style="font-size:0.85em;color:var(--violet)">// @ghost #name start</code> and
+            <code style="font-size:0.85em;color:var(--violet)">// @ghost end</code> and GhostMap creates a named parent node
+            that owns everything inside — regardless of language structure.
+          </p>
+          <p>
+            Ideal for large refactors, ongoing migrations, or "hot zones" you want to
+            flag for the whole team before anyone touches them.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px">
+            <a href="https://docs.ghostmap.dev/guide/range-anchor" class="concept-link">Ghost Ranges ref →</a>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__bar">
+            <div class="panel__dots">
+              <span class="panel__dot panel__dot--r"></span>
+              <span class="panel__dot panel__dot--y"></span>
+              <span class="panel__dot panel__dot--g"></span>
+            </div>
+            <span class="panel__title">payment.service.ts</span>
+          </div>
+          <div class="panel__body">
+            <div class="code">
+<span class="line line--hl"><span class="ln">1</span><span class="gh">// @ghost #payment-v2 start</span></span>
+<span class="line line--hl"><span class="ln">2</span><span class="gh">// description: split into 3 services | status: <span class="gs">in-progress</span></span></span>
+<span class="line"><span class="ln">3</span></span>
+<span class="line"><span class="ln">4</span><span class="kw">class</span> <span class="cls">PaymentService</span> {</span>
+<span class="line"><span class="ln">5</span>  <span class="fn">charge</span>() {}</span>
+<span class="line"><span class="ln">6</span>  <span class="fn">refund</span>() {}</span>
+<span class="line"><span class="ln">7</span></span>
+<span class="line"><span class="ln">8</span>  <span class="gh">// @ghost description: move to billing-service | status: <span class="gs">todo</span></span></span>
+<span class="line"><span class="ln">9</span>  <span class="fn">reconcile</span>() {}</span>
+<span class="line"><span class="ln">10</span>}</span>
+<span class="line"><span class="ln">11</span></span>
+<span class="line line--hl"><span class="ln">12</span><span class="gh">// @ghost end</span></span>
+            </div>
+            <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
+              <div class="tree">
+                <div class="tree-row">
+                  <svg class="icon-a" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21 12 16 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg>
+                  <span class="tree-row__name">#payment-v2</span>
+                  <span class="tree-row__badge badge--progress">in-progress</span>
+                </div>
+                <div class="tree-row tree-row--i1">
+                  <svg class="icon-c" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                  <span class="tree-row__name">PaymentService</span>
+                </div>
+                <div class="tree-row tree-row--i2">
+                  <svg class="icon-f" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/></svg>
+                  <span>charge</span>
+                </div>
+                <div class="tree-row tree-row--i2">
+                  <svg class="icon-f" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/></svg>
+                  <span>refund</span>
+                </div>
+                <div class="tree-row tree-row--i2">
+                  <svg class="icon-f" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/></svg>
+                  <span>reconcile</span>
+                  <span class="tree-row__badge badge--todo">todo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GHOST INDEX ═══════════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="split-demo">
+        <div class="split-demo__text">
+          <div class="section__label">Ghost Index</div>
+          <h2>Opens in milliseconds.<br />Not seconds.</h2>
+          <p>
+            The Ghost Index is the loading engine. Every time GhostMap analyzes a file,
+            it persists the result — symbols, anchors, tree — into a local snapshot.
+          </p>
+          <p>
+            Next time you open that file, the tree appears instantly from the snapshot.
+            No LSP cold start. No re-parse. No waiting.
+          </p>
+          <div style="margin-top:24px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:12px;font-size:0.88rem">
+              <span style="background:var(--violet-dim);color:var(--violet-bright);border-radius:4px;padding:2px 8px;font-family:var(--font-mono);font-size:0.78rem">without index</span>
+              <span style="color:var(--text-muted)">LSP cold start: 5 – 35 s</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;font-size:0.88rem">
+              <span style="background:rgba(74,222,128,0.12);color:var(--green);border-radius:4px;padding:2px 8px;font-family:var(--font-mono);font-size:0.78rem">with Ghost Index</span>
+              <span style="color:var(--text-muted)">Snapshot load: &lt; 50 ms</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__bar">
+            <div class="panel__dots">
+              <span class="panel__dot panel__dot--r"></span>
+              <span class="panel__dot panel__dot--y"></span>
+              <span class="panel__dot panel__dot--g"></span>
+            </div>
+            <span class="panel__title">.ghostmap / snapshot</span>
+          </div>
+          <div class="panel__body">
+            <div class="code" style="font-size:0.76rem">
+<span class="line"><span class="kw">{</span></span>
+<span class="line">  <span class="str">"schemaVersion"</span>: <span class="num">1</span>,</span>
+<span class="line">  <span class="str">"uri"</span>: <span class="str">"auth.service.ts"</span>,</span>
+<span class="line">  <span class="str">"textFingerprint"</span>: <span class="str">"sha256:a3f..."</span>,</span>
+<span class="line">  <span class="str">"capturedAt"</span>: <span class="str">"2026-06-17T..."</span>,</span>
+<span class="line">  <span class="str">"isComplete"</span>: <span class="kw">true</span>,</span>
+<span class="line">  <span class="str">"tree"</span>: [</span>
+<span class="line">    { <span class="str">"name"</span>: <span class="str">"AuthService"</span>, <span class="str">"type"</span>: <span class="str">"class"</span>, ... },</span>
+<span class="line">    { <span class="str">"name"</span>: <span class="str">"login"</span>, <span class="str">"type"</span>: <span class="str">"function"</span>, ... }</span>
+<span class="line">  ]</span>
+<span class="line"><span class="kw">}</span></span>
+            </div>
+            <div style="margin-top:16px;padding:12px;background:var(--bg-3);border-radius:var(--r-sm);font-size:0.82rem;color:var(--text-muted)">
+              The snapshot is fingerprinted with SHA-256. If the file changes between sessions, GhostMap detects the mismatch on the next refresh and rebuilds automatically.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DIAGNOSTICS ═══════════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__label">Diagnostics &amp; Quick Fixes</div>
+        <h2 class="section__title">Wrong syntax. Instant fix.</h2>
+        <p class="section__desc">GhostMap catches annotation problems as you type and offers one-click fixes directly in the editor.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+        <div class="feat-card">
+          <h3>Unclosed range</h3>
+          <p>A <code style="font-size:0.82em;color:var(--violet)">#name start</code> without a matching <code style="font-size:0.82em;color:var(--violet)">end</code>. GhostMap degrades it to a point anchor and warns you.</p>
+        </div>
+        <div class="feat-card">
+          <h3>Malformed syntax</h3>
+          <p>A free word after <code style="font-size:0.82em;color:var(--violet)">@ghost</code> that doesn't match any pattern. Quick fix: convert to named anchor or contextual anchor.</p>
+        </div>
+        <div class="feat-card">
+          <h3>Detached anchor</h3>
+          <p>A contextual anchor with no symbol nearby within the ownership radius. GhostMap tells you which anchor is floating.</p>
+        </div>
+        <div class="feat-card">
+          <h3>Invalid status</h3>
+          <p>A status value that isn't recognized. Quick fix: suggests the closest valid value — or <code style="font-size:0.82em;color:var(--violet)">todo</code> as default.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LANGUAGES ════════════════════════════════════════ -->
+  <section class="section section--bordered" id="languages">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__label">Ghost Engine — Language Support</div>
+        <h2 class="section__title">19 languages. Three quality tiers.</h2>
+        <p class="section__desc">
+          The language engine stacks three extractors in order: LSP (if active),
+          Tree-sitter WASM, and regex fallback. You always get a tree.
+        </p>
+      </div>
+
+      <div style="display:grid;gap:32px">
+        <!-- Tier 1 -->
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block;flex-shrink:0"></span>
+            <span style="font-size:0.85rem;font-weight:700;color:var(--green)">First-class</span>
+            <span style="font-size:0.82rem;color:var(--text-faint)">— symbol extraction + full nesting</span>
+          </div>
+          <div class="lang-grid">
+            <span class="lang-pill"><span class="tier tier--1"></span>TypeScript</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>TSX</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>JavaScript</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>JSX</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>Python</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>Rust</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>C#</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>Java</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>C++</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>C</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>PHP</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>Ruby</span>
+            <span class="lang-pill"><span class="tier tier--1"></span>Dart</span>
+          </div>
+        </div>
+        <!-- Tier 2 -->
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--amber);display:inline-block;flex-shrink:0"></span>
+            <span style="font-size:0.85rem;font-weight:700;color:var(--amber)">Best-effort</span>
+            <span style="font-size:0.82rem;color:var(--text-faint)">— symbols extract; nesting may be partial</span>
+          </div>
+          <div class="lang-grid">
+            <span class="lang-pill"><span class="tier tier--2"></span>Go</span>
+            <span class="lang-pill"><span class="tier tier--2"></span>Groovy</span>
+            <span class="lang-pill"><span class="tier tier--2"></span>Objective-C</span>
+          </div>
+        </div>
+        <!-- Tier 3 -->
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--red);display:inline-block;flex-shrink:0"></span>
+            <span style="font-size:0.85rem;font-weight:700;color:var(--red)">Top-level only</span>
+            <span style="font-size:0.82rem;color:var(--text-faint)">— coarse index; deep nesting unreliable</span>
+          </div>
+          <div class="lang-grid">
+            <span class="lang-pill"><span class="tier tier--3"></span>Scala</span>
+            <span class="lang-pill"><span class="tier tier--3"></span>Solidity</span>
+            <span class="lang-pill"><span class="tier tier--3"></span>Julia</span>
+            <span class="lang-pill"><span class="tier tier--3"></span>Elixir</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;padding:20px 24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);font-size:0.88rem;color:var(--text-muted)">
+        <strong style="color:var(--text)">How the engine picks an extractor:</strong>
+        LSP → Tree-sitter WASM → regex fallback. The Ghost Engine tries LSP first with an 800 ms timeout.
+        If the language server isn't available or is slow, it falls back to the next layer automatically.
+        You always get a tree — it just might be less detailed for tier-2/3 languages.
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-block">
+    <div class="container">
+      <h2>Ready to map your project?</h2>
+      <p>Free, open source. Works in any VS Code workspace.</p>
+      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2 9 9 4.5 6 2 7.5v9L4.5 18 9 15l8 7 5-2.4V4.4ZM9 14.2 5 11.5v-3L9 9.8Zm8 4.3-5.9-5.2L17 7.5Z"/></svg>
+        Install for VS Code
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><img src="../img/ghost-logo.png" alt="GhostMap" /> GhostMap</div>
+        <p class="footer__tagline">Turn code annotations into project maps.</p>
+      </div>
+      <div class="footer__col"><h4>Product</h4><ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Resources</h4><ul>
+        <li><a href="https://docs.ghostmap.dev">Documentation</a></li>
+        <li><a href="https://docs.ghostmap.dev/get-started/instalacion">Quick start</a></li>
+        <li><a href="https://docs.ghostmap.dev/reference/sintaxis">Syntax reference</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Community</h4><ul>
+        <li><a href="https://github.com/ghostmap" target="_blank">GitHub</a></li>
+        <li><a href="https://github.com/ghostmap/discussions" target="_blank">Discussions</a></li>
+        <li><a href="https://github.com/ghostmap/issues" target="_blank">Issues</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>MIT Licensed · Made with 💜 by developers</span>
+      <span>© 2026 GhostMap</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
