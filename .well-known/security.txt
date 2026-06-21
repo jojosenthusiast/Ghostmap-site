@@ -1,5 +1,3 @@
-Contact: https://github.com/MarxWellB/genesis/security/advisories/new
-Contact: https://github.com/MarxWellB
+Contact: mailto:getghostmap@proton.me
 Preferred-Languages: en, es
-Canonical: https://marxwellb.github.io/Ghostmap-site/.well-known/security.txt
-Policy: https://marxwellb.github.io/Ghostmap-site/pages/terms.html
+Canonical: https://ghostmap-liard.vercel.app/.well-known/security.txt

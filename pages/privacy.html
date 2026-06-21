@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy - GhostMap</title>
-  <meta name="description" content="GhostMap collects nothing. No telemetry, no analytics, no network calls. This policy explains why and what that means for you." />
+  <meta name="description" content="The GhostMap extension runs locally with no telemetry or GhostMap servers. This policy explains local cache behavior, site font requests, and support-platform caveats." />
   <link rel="icon" type="image/png" href="../img/ghost-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://marxwellb.github.io/Ghostmap-site/pages/privacy.html" />
+  <link rel="canonical" href="https://ghostmap-liard.vercel.app/pages/privacy.html" />
   <meta name="theme-color" content="#080810" />
   <meta name="author" content="GhostMap contributors" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -18,12 +18,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="GhostMap" />
   <meta property="og:title" content="Privacy Policy - GhostMap" />
-  <meta property="og:description" content="GhostMap collects nothing. No telemetry, no analytics, no network calls. Read the full policy." />
-  <meta property="og:url" content="https://marxwellb.github.io/Ghostmap-site/pages/privacy.html" />
+  <meta property="og:description" content="The GhostMap extension runs locally with no telemetry or GhostMap servers. Read the full policy." />
+  <meta property="og:url" content="https://ghostmap-liard.vercel.app/pages/privacy.html" />
   <meta property="og:image" content="../img/ghost-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Privacy Policy - GhostMap" />
-  <meta name="twitter:description" content="GhostMap collects nothing. No telemetry, no analytics, no network calls. Read the full policy." />
+  <meta name="twitter:description" content="The GhostMap extension runs locally with no telemetry or GhostMap servers. Read the full policy." />
   <meta name="twitter:image" content="../img/ghost-logo.png" />
 
   <link rel="stylesheet" href="../css/styles.css" />
@@ -34,7 +34,7 @@
     .legal p, .legal li { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; }
     .legal ul { padding-left: 20px; }
     .legal .effective { font-size: 0.8rem; color: var(--text-faint); margin-top: -6px; }
-    .legal .callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--violet); padding: 16px 20px; border-radius: var(--r); margin: 20px 0; font-size: 0.92rem; color: var(--text); }
+    .legal .callout { background: var(--surface); border: 1px solid var(--border); padding: 16px 20px; border-radius: var(--r); margin: 20px 0; font-size: 0.92rem; color: var(--text); }
   </style>
 </head>
 <body>
@@ -55,12 +55,12 @@
         <li><a href="how-it-works.html">How it works</a></li>
         <li><a href="roadmap.html">Roadmap</a></li>
         <li><a href="changelog.html">Changelog</a></li>
-        <li><a href="https://docs.ghostmap.dev" target="_blank" rel="noopener">Docs &#8599;</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/" target="_blank" rel="noopener">Docs &#8599;</a></li>
       </ul>
     </nav>
     <div class="nav__right">
-      <a href="https://github.com/ghostmap" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
-      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--sm">Install</a>
+      <a href="mailto:getghostmap@proton.me" class="btn btn--outline btn--sm">Contact</a>
+      <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--primary btn--sm">Install</a>
     </div>
   </div>
 </header>
@@ -70,20 +70,20 @@
     <div class="container">
       <div class="hero__eyebrow"><span class="dot"></span> Legal</div>
       <h1>Privacy Policy</h1>
-      <p class="hero__sub">Short version: GhostMap collects nothing. The long version is below.</p>
+      <p class="hero__sub">Short version: the extension runs locally and has no GhostMap telemetry or server backend. Site and support-platform caveats are below.</p>
     </div>
   </section>
 
   <section class="section section--bordered">
     <div class="container legal">
-      <p class="effective"><strong>Effective date:</strong> June 18, 2026 · <strong>Version:</strong> 1.0</p>
+      <p class="effective"><strong>Effective date:</strong> June 20, 2026 · <strong>Version:</strong> 1.1</p>
 
       <div class="callout">
-        <strong>The whole policy in one line.</strong> GhostMap runs entirely on your machine, makes no network calls of its own, transmits no source code or metadata, stores no analytics, and does not communicate with the maintainers or any third party.
+        <strong>The whole policy in one line.</strong> The GhostMap extension runs entirely on your machine, makes no network calls of its own, transmits no source code, file contents, file paths, or metadata off your machine, ships no telemetry or analytics, and does not communicate with the maintainers or any third party. There are no GhostMap servers.
       </div>
 
-      <h2>1. What data we collect</h2>
-      <p>None. GhostMap does not collect, process, transmit, or store any personally identifiable information, source code, file contents, file paths, telemetry, crash reports, usage statistics, or any other data about you, your machine, or your projects.</p>
+      <h2>1. What data we receive</h2>
+      <p>None. The GhostMap maintainers do not operate any GhostMap server, telemetry endpoint, analytics provider, or crash-report sink. We do not receive, collect, or store personally identifiable information, source code, file contents, file paths, telemetry, crash reports, or usage statistics about you, your machine, or your projects from the extension. The extension does read and process workspace files locally on your machine and writes a local cache to your filesystem — that local processing and storage is described in sections 2 and 3 and never leaves your device.</p>
 
       <h2>2. What data the extension reads locally</h2>
       <p>To do its job, GhostMap reads the following inside the VS Code Extension Host process running on your computer:</p>
@@ -99,33 +99,35 @@
       <p>GhostMap maintains a per-workspace cache file at <code>&lt;workspace&gt;/.ghostmap/ghostmap.json</code>. This file contains the symbol tree, anchors, and metadata for files you have opened. It is capped at 2 megabytes and is stored exclusively on your filesystem. It is never transmitted anywhere. You can delete it at any time without consequence beyond a slower first-open of recently used files.</p>
 
       <h2>4. Network activity</h2>
-      <p>GhostMap itself makes zero outbound network requests. The VS Code application and the Language Servers you have installed may make their own network requests according to their respective policies. GhostMap has no involvement in those.</p>
+      <p>The GhostMap extension itself makes zero outbound network requests. The VS Code application and the Language Servers you have installed may make their own network requests according to their respective policies. GhostMap has no involvement in those.</p>
 
       <h2>5. Third-party services</h2>
       <p>The GhostMap <strong>extension</strong> integrates with no third-party services, no analytics provider, no error-tracking service, no advertising network, and no AI service. The Tree-sitter parsers shipped inside the extension are static WebAssembly files that run locally with no network capability.</p>
       <p>The GhostMap <strong>marketing site and documentation site</strong> load typography from Google Fonts (<code>fonts.googleapis.com</code> and <code>fonts.gstatic.com</code>) on page render. This is a request from your browser to Google in order to fetch the font files. Google may log the request as it would any HTTP request to its servers. We use no other third-party services on these surfaces: no analytics, no tag manager, no advertising, no embeds. A future revision of the sites may self-host the fonts to remove this last external request.</p>
+      <p>Possible future voluntary supporter platforms (Lemon Squeezy, Patreon, and Ko-fi) would each process payment, account, receipt, and supporter data under their own privacy policies if and when adopted; none are active today. Direct supporter contact at <a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a> is the canonical channel. Any voluntary support flow is separate from the GhostMap extension. It does not add extension telemetry, does not make the extension transmit project data, and does not grant any commercial-use rights.</p>
 
       <h2>6. Cookies and tracking</h2>
       <p>The GhostMap extension is not a web property and uses no cookies. The marketing site and documentation site do not set cookies and do not run analytics. Server access logs may be kept by the hosting provider for the standard short retention window; consult the provider's policy for details. The maintainers do not access or use those logs.</p>
 
       <h2>7. Children's privacy</h2>
-      <p>GhostMap is a developer tool not directed at children under 13. Since GhostMap collects no data, no information about any user is ever obtained, regardless of age.</p>
+      <p>GhostMap is a developer tool not directed at children under 13. The extension does not send user data to GhostMap maintainers or GhostMap servers. Site font requests, hosting logs, and voluntary support platforms are covered in sections 5 and 6.</p>
 
       <h2>8. Your rights</h2>
-      <p>Because GhostMap collects, transmits, processes and stores zero data about you, there is nothing to request access to, delete, port, rectify, or restrict. Under GDPR, CCPA, and equivalent regimes, the "no data" posture satisfies the spirit of every right by removing the data category entirely.</p>
+      <p>Because the GhostMap maintainers do not receive or store any extension data about you on any server, there is nothing held by us to request access to, delete, port, rectify, or restrict. Files on your machine, including the local <code>.ghostmap</code> cache described in section 3, stay under your control and your filesystem's data-protection regime — you can inspect or delete them at any time. Requests under GDPR, CCPA, or equivalent regimes that concern the marketing or documentation sites should also account for the Google Fonts request described in section 5 and the hosting provider's standard access logs noted in section 6, which are governed by those third parties' own policies.</p>
 
-      <h2>9. Future changes</h2>
-      <p>If a future version of GhostMap ever introduces an optional feature that involves data collection (for example, an optional opt-in telemetry signal, or a server-backed Enterprise feature), that feature will be:</p>
+      <h2>9. Future enterprise-oriented roadmap and server services</h2>
+      <p>The enterprise-oriented integrations sketched on the <a href="roadmap.html">Roadmap</a> page (Jira / Slack flow, Ghost Threads, Ghost Graph, dashboards, AI explanations, permissions and audit log) are <strong>not implemented today</strong> and no part of GhostMap currently talks to any of those services. Nothing in this policy should be read as a commitment that those integrations will exist, or that they will preserve the current "no network" posture.</p>
+      <p>If a future version of GhostMap ever introduces an optional feature that involves data collection or transmission (for example, an optional opt-in telemetry signal, or an Enterprise capability with server services), that feature will be:</p>
       <ul>
         <li>Off by default.</li>
-        <li>Clearly disclosed in this Privacy Policy before being shipped.</li>
+        <li>Clearly disclosed in this Privacy Policy before being shipped, including the data fields, retention period, recipients, and any third-party processors involved.</li>
         <li>Accompanied by an in-extension consent prompt before any data leaves your machine.</li>
-        <li>Documented with the exact data fields, retention period, and recipients.</li>
+        <li>Documented as a separate processing context from the current local-only V1 behavior described above.</li>
       </ul>
-      <p>This policy will carry an updated effective date and version when that happens. The current version commits to collecting nothing.</p>
+      <p>This policy will carry an updated effective date and version when that happens. No current claim of local-only behavior should be read as a guarantee about future features with server services &#8211; those will need their own notice and review before they can ship.</p>
 
       <h2>10. Contact</h2>
-      <p>Questions about this policy can be opened as a GitHub Issue at <a href="https://github.com/ghostmap/issues">github.com/ghostmap/issues</a> or sent through the maintainer profile at <a href="https://github.com/MarxWellB">github.com/MarxWellB</a>.</p>
+      <p>Privacy questions, data-protection requests, DPA inquiries, and bug reports all go to <a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a>. This email is the canonical channel for legal, privacy, and support correspondence about GhostMap.</p>
 
       <h2>11. Disclaimer</h2>
       <p>This document is provided in good faith and reflects the design of the extension as published. It is not a substitute for legal advice. If you operate under a regulated regime that requires a Data Processing Agreement or similar instrument, please reach out before deploying GhostMap at scale.</p>
@@ -147,23 +149,26 @@
         <li><a href="changelog.html">Changelog</a></li>
       </ul></div>
       <div class="footer__col"><h4>Resources</h4><ul>
-        <li><a href="https://docs.ghostmap.dev">Documentation</a></li>
-        <li><a href="https://docs.ghostmap.dev/get-started/instalacion">Quick start</a></li>
-        <li><a href="https://docs.ghostmap.dev/reference/sintaxis">Syntax reference</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/get-started/instalacion">Quick start</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/reference/sintaxis">Syntax reference</a></li>
       </ul></div>
       <div class="footer__col"><h4>Legal</h4><ul>
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Use</a></li>
         <li><a href="notices.html">Third-Party Notices</a></li>
+        <li>Free for personal, educational &amp; evaluation use</li>
+        <li>Commercial use needs a license</li>
+        <li>Legal inquiries: <a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
       </ul></div>
       <div class="footer__col"><h4>Community</h4><ul>
-        <li><a href="https://github.com/ghostmap" target="_blank">GitHub</a></li>
-        <li><a href="https://github.com/ghostmap/discussions" target="_blank">Discussions</a></li>
-        <li><a href="https://github.com/ghostmap/issues" target="_blank">Issues</a></li>
+        <li><a href="../index.html#support">Support GhostMap</a></li>
+        <li><a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
       </ul></div>
     </div>
     <div class="footer__bottom">
-      <span>MIT Licensed · Made with 💜 by developers</span>
+      <span>Free for personal, educational &amp; evaluation use · Commercial use needs a license</span>
       <span>© <span id="year">2026</span> GhostMap</span>
     </div>
   </div>

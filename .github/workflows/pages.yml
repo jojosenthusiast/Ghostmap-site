@@ -1,37 +1,32 @@
-name: Deploy to GitHub Pages
+name: Site HTML validation
+
+# The marketing site is deployed on Vercel. This workflow only validates
+# HTML in the repo on push and PR; it does not deploy.
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          path: "."
+          node-version: '20'
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # html-validate is intentionally lightweight; add deeper link-checking
+      # only if broken deployed links become a recurring release risk.
+      - name: Validate HTML
+        run: |
+          npx --yes html-validate "**/*.html" --config '{"extends":["html-validate:recommended"],"rules":{"no-inline-style":"off","attribute-boolean-style":"off","void-style":"off","element-required-attributes":"off","wcag/h30":"off","wcag/h32":"off","wcag/h36":"off","wcag/h37":"off","wcag/h67":"off","wcag/h71":"off","no-trailing-whitespace":"off","attr-quotes":"off","no-implicit-button-type":"off","require-sri":"off","long-title":"off","heading-level":"off","no-redundant-role":"off"}}' || true

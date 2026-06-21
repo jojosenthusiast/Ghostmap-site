@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marxwellb.github.io/Ghostmap-site/sitemap.xml

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://marxwellb.github.io/Ghostmap-site/pages/how-it-works.html" />
+  <link rel="canonical" href="https://ghostmap-liard.vercel.app/pages/how-it-works.html" />
   <meta name="theme-color" content="#080810" />
   <meta name="author" content="GhostMap contributors" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="GhostMap" />
   <meta property="og:title" content="How it works - GhostMap" />
   <meta property="og:description" content="How the Ghost Engine extracts symbols and how the Ghost Tree stays fast on 60k-line files." />
-  <meta property="og:url" content="https://marxwellb.github.io/Ghostmap-site/pages/how-it-works.html" />
+  <meta property="og:url" content="https://ghostmap-liard.vercel.app/pages/how-it-works.html" />
   <meta property="og:image" content="../img/ghost-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How it works - GhostMap" />
@@ -46,13 +46,12 @@
         <li><a href="how-it-works.html">How it works</a></li>
         <li><a href="roadmap.html">Roadmap</a></li>
         <li><a href="changelog.html">Changelog</a></li>
-        <li><a href="https://docs.ghostmap.dev" target="_blank" rel="noopener">Docs ↗</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/" target="_blank" rel="noopener">Docs ↗</a></li>
       </ul>
     </nav>
     <div class="nav__right">
-      <a href="es/how-it-works.html" class="nav__lang">ES</a>
-      <a href="https://github.com/ghostmap" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
-      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--sm">Install</a>
+      <a href="mailto:getghostmap@proton.me" class="btn btn--outline btn--sm">Contact</a>
+      <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--primary btn--sm">Install</a>
       <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -73,7 +72,6 @@
     </div>
   </section>
 
-  <!-- ═══ THE MODEL ═════════════════════════════════════════ -->
   <section class="section section--bordered">
     <div class="container">
       <div class="section__head section__head--center">
@@ -86,7 +84,7 @@
           <div class="step__num">01</div>
           <div class="step__tag">Ghost Engine</div>
           <h3>Symbol extraction</h3>
-          <p>GhostMap reads your file and extracts every meaningful symbol: classes, functions, interfaces, structs, enums. It uses LSP first, then Tree-sitter WASM, then regex fallback - whichever gives the best result for your language.</p>
+          <p>GhostMap reads your file and extracts meaningful symbols: classes, functions, interfaces, structs, and enums. It uses the strongest available extractor for your supported language, then falls back gracefully when needed.</p>
         </div>
         <div class="step">
           <div class="step__num">02</div>
@@ -107,15 +105,56 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg>
         </div>
         <div>
-          <div class="step__tag" style="margin-bottom:8px">Ghost Index</div>
-          <strong style="font-family:var(--font-display);font-size:0.95rem">Snapshot &amp; instant reload</strong>
-          <p style="margin:6px 0 0;font-size:0.88rem;color:var(--text-muted)">After the first analysis, GhostMap persists the complete tree into the Ghost Index - a local snapshot fingerprinted with the file's content hash. Every subsequent open loads from this snapshot in milliseconds, with zero LSP work.</p>
+          <div class="step__tag" style="margin-bottom:8px">Ghost Index &#8211; V1</div>
+          <strong style="font-family:var(--font-display);font-size:0.95rem">Per-file snapshot &amp; instant reload</strong>
+          <p style="margin:6px 0 0;font-size:0.88rem;color:var(--text-muted)">After the first analysis of an active file, GhostMap persists the complete tree into the per-document Ghost Index &#8211; a local snapshot fingerprinted with the file&#8217;s content hash, stored under <code style="font-size:0.82em;color:var(--violet)">.ghostmap/ghostmap.json</code>. Every subsequent open of that same file loads from the snapshot in milliseconds, with zero LSP work. V1 is per-file: only files you have opened are cached.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ THREE ANCHOR TYPES ════════════════════════════════ -->
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <div class="section__label">V1 vs V2 scope</div>
+        <h2 class="section__title">Active file today. Workspace tomorrow.</h2>
+        <p class="section__desc">GhostMap V1 ships an active-file Ghost Tree backed by a per-document local cache. The workspace-wide indexing engine is the V2 direction &#8211; designed but not shipped.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+
+        <div class="feat-card">
+          <h3>V1 &#8211; today <span class="feat-card__tag">shipped</span></h3>
+          <ul style="margin:10px 0 0;padding-left:18px;font-size:0.9rem;color:var(--text-muted);line-height:1.6">
+            <li>Active-file Ghost Tree from the best available local extractor.</li>
+            <li>Per-document snapshot in <code style="font-size:0.82em;color:var(--violet)">.ghostmap/ghostmap.json</code>.</li>
+            <li>Fingerprint-validated reload, optimistic trust on activate.</li>
+            <li>No workspace-wide index, no file-system watcher, no background fingerprint validator (the previous one was removed in round 6 because it froze the host).</li>
+          </ul>
+        </div>
+
+        <div class="feat-card">
+          <h3>V2 indexing engine <span class="feat-card__tag">planned</span></h3>
+          <ul style="margin:10px 0 0;padding-left:18px;font-size:0.9rem;color:var(--text-muted);line-height:1.6">
+            <li>Workspace-wide <strong>Ghost Index v2</strong> as sharded JSON snapshots.</li>
+            <li><strong>Ghost Watcher</strong> on the file system, debounced per URI.</li>
+            <li>Incremental background indexing in a worker thread, off the Extension Host main loop.</li>
+            <li>Designed to keep the V1 active-file responsiveness untouched on the fast path.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p style="margin-top:18px;font-size:0.82rem;color:var(--text-faint);text-align:center">
+        Status: V2 design + skeleton branches only. Not in any shipped 0.5.x.
+        Future enterprise-oriented integrations on top of V2 (Jira / Slack,
+        Ghost Threads, Ghost Graph, AI explanations, permissions &amp; audit
+        log) are sketched on the <a href="roadmap.html">Roadmap</a> page as
+        future direction, not shipped.
+      </p>
+    </div>
+  </section>
+
   <section class="section section--bordered">
     <div class="container">
       <div class="section__head">
@@ -182,7 +221,6 @@
     </div>
   </section>
 
-  <!-- ═══ STATUS SYSTEM ═════════════════════════════════════ -->
   <section class="section section--bordered">
     <div class="container">
       <div class="section__head">
@@ -224,14 +262,13 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta-block">
     <div class="container">
       <h2>Try it on your own project.</h2>
       <p>Install takes 10 seconds. Your first <code style="font-size:0.9em;color:var(--violet)">@ghost</code> takes 5.</p>
       <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
-        <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--lg">Install for VS Code</a>
-        <a href="https://docs.ghostmap.dev/get-started/primeros-5-minutos" class="btn btn--outline btn--lg">5-minute guide →</a>
+        <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--primary btn--lg">Install &#8211; Local VSIX</a>
+        <a href="https://ghostmap-docs.vercel.app/get-started/primeros-5-minutos" class="btn btn--outline btn--lg">5-minute guide →</a>
       </div>
     </div>
   </section>
@@ -251,23 +288,26 @@
         <li><a href="changelog.html">Changelog</a></li>
       </ul></div>
       <div class="footer__col"><h4>Resources</h4><ul>
-        <li><a href="https://docs.ghostmap.dev">Documentation</a></li>
-        <li><a href="https://docs.ghostmap.dev/get-started/instalacion">Quick start</a></li>
-        <li><a href="https://docs.ghostmap.dev/reference/sintaxis">Syntax reference</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/get-started/instalacion">Quick start</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/reference/sintaxis">Syntax reference</a></li>
       </ul></div>
       <div class="footer__col"><h4>Legal</h4><ul>
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Use</a></li>
         <li><a href="notices.html">Third-Party Notices</a></li>
+        <li>Free for personal, educational &amp; evaluation use</li>
+        <li>Commercial use needs a license</li>
+        <li>Legal inquiries: <a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
       </ul></div>
       <div class="footer__col"><h4>Community</h4><ul>
-        <li><a href="https://github.com/ghostmap" target="_blank">GitHub</a></li>
-        <li><a href="https://github.com/ghostmap/discussions" target="_blank">Discussions</a></li>
-        <li><a href="https://github.com/ghostmap/issues" target="_blank">Issues</a></li>
+        <li><a href="../index.html#support">Support GhostMap</a></li>
+        <li><a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
       </ul></div>
     </div>
     <div class="footer__bottom">
-      <span>MIT Licensed · Made with 💜 by developers</span>
+      <span>Free for personal, educational &amp; evaluation use · Commercial use needs a license</span>
       <span>© <span id="year">2026</span> GhostMap</span>
     </div>
   </div>

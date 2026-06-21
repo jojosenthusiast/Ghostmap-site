@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://marxwellb.github.io/Ghostmap-site/pages/changelog.html" />
+  <link rel="canonical" href="https://ghostmap-liard.vercel.app/pages/changelog.html" />
   <meta name="theme-color" content="#080810" />
   <meta name="author" content="GhostMap contributors" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -18,18 +18,18 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="GhostMap" />
   <meta property="og:title" content="Changelog - GhostMap" />
-  <meta property="og:description" content="Every fix, every feature, every round. GhostMap is developed in public." />
-  <meta property="og:url" content="https://marxwellb.github.io/Ghostmap-site/pages/changelog.html" />
+  <meta property="og:description" content="GhostMap release notes. Every fix, every feature, every round, with the reasoning behind it." />
+  <meta property="og:url" content="https://ghostmap-liard.vercel.app/pages/changelog.html" />
   <meta property="og:image" content="../img/ghost-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Changelog - GhostMap" />
-  <meta name="twitter:description" content="Every fix, every feature, every round. GhostMap is developed in public." />
+  <meta name="twitter:description" content="GhostMap release notes. Every fix, every feature, every round, with the reasoning behind it." />
   <meta name="twitter:image" content="../img/ghost-logo.png" />
 
   <link rel="stylesheet" href="../css/styles.css" />
   <style>
-    .cl-entry { border-left: 2px solid var(--border); padding-left: 28px; margin-bottom: 48px; position: relative; }
-    .cl-entry::before { content: ''; position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--violet); }
+    .cl-entry { border: 1px solid var(--border); background: rgba(155,109,255,0.03); border-radius: 10px; padding: 22px 24px 22px 44px; margin-bottom: 28px; position: relative; }
+    .cl-entry::before { content: ''; position: absolute; left: 18px; top: 28px; width: 10px; height: 10px; border-radius: 50%; background: var(--violet); box-shadow: 0 0 0 3px rgba(155,109,255,0.18); }
     .cl-entry--current::before { background: var(--green); box-shadow: 0 0 0 3px rgba(74,222,128,0.2); }
     .cl-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
     .cl-version { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; }
@@ -61,13 +61,12 @@
         <li><a href="how-it-works.html">How it works</a></li>
         <li><a href="roadmap.html">Roadmap</a></li>
         <li><a href="changelog.html">Changelog</a></li>
-        <li><a href="https://docs.ghostmap.dev" target="_blank" rel="noopener">Docs ↗</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/" target="_blank" rel="noopener">Docs ↗</a></li>
       </ul>
     </nav>
     <div class="nav__right">
-      <a href="es/changelog.html" class="nav__lang">ES</a>
-      <a href="https://github.com/ghostmap" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
-      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--sm">Install</a>
+      <a href="mailto:getghostmap@proton.me" class="btn btn--outline btn--sm">Contact</a>
+      <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--primary btn--sm">Install</a>
       <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -80,19 +79,35 @@
     <div class="container">
       <div class="hero__eyebrow"><span class="dot"></span> Changelog</div>
       <h1>Every change,<br /><em>documented.</em></h1>
-      <p class="hero__sub">GhostMap is developed in public. Every fix and feature is logged here with the reasoning behind it.</p>
+      <p class="hero__sub">GhostMap product changelog. Every user-visible fix and feature is logged here with the reasoning behind it.</p>
     </div>
   </section>
 
   <section class="section section--bordered">
     <div class="container" style="max-width: 760px">
 
-      <!-- Round 6 -->
       <div class="cl-entry cl-entry--current">
+        <div class="cl-meta">
+          <span class="cl-version">Docs &amp; distribution clarification</span>
+          <span class="cl-date">June 20, 2026</span>
+          <span class="cl-badge cl-badge--current">Current</span>
+        </div>
+
+        <div class="cl-section">Site / docs / extension source sync</div>
+        <ul class="cl-items">
+          <li><strong>Version stamp</strong> &#8211; updated public copy from 0.0.1 to <strong>0.5.0</strong> across the README and install snippets.</li>
+          <li><strong>Distribution truth</strong> &#8211; reframed the home page, roadmap, and install docs so local VSIX packaging is the current channel, GitHub Releases are planned post-tag, the VS Code Marketplace listing is planned and depends on publisher onboarding, and Open VSX is documented as the planned bridge for VSCodium and other Open VSX-compatible editors.</li>
+          <li><strong>V1 vs V2 scope</strong> &#8211; the "how it works" page now distinguishes the V1 active-file Ghost Tree + per-document cache from the V2 workspace-wide indexing engine direction (Ghost Index v2 + Ghost Watcher), which is designed but not shipped.</li>
+          <li><strong>Language expansion</strong> &#8211; the features page now separates the 19 currently supported languages from the planned ~20-language expansion workstream gated on Tree-sitter packaging, WASM provenance, query validity, and fixture coverage.</li>
+          <li><strong>Enterprise framing</strong> &#8211; the roadmap, Privacy Policy, and Terms of Use now flag Jira / Slack, Ghost Threads, Ghost Graph, dashboards, AI explanations, and permissions / audit log as future Enterprise roadmap capabilities that are not shipped today and would require their own privacy notice and consent before any integration with server services.</li>
+        </ul>
+      </div>
+
+      <div class="cl-entry">
         <div class="cl-meta">
           <span class="cl-version">Round 6</span>
           <span class="cl-date">June 17, 2026</span>
-          <span class="cl-badge cl-badge--current">Current</span>
+          <span class="cl-badge cl-badge--pre">Pre-release</span>
         </div>
 
         <div class="cl-section">Fixes</div>
@@ -106,7 +121,6 @@
         </ul>
       </div>
 
-      <!-- Round 5 -->
       <div class="cl-entry">
         <div class="cl-meta">
           <span class="cl-version">Round 5</span>
@@ -133,7 +147,6 @@
         </ul>
       </div>
 
-      <!-- Round 4 -->
       <div class="cl-entry">
         <div class="cl-meta">
           <span class="cl-version">Round 4</span>
@@ -159,7 +172,6 @@
         </ul>
       </div>
 
-      <!-- v1-coalesce-publish -->
       <div class="cl-entry">
         <div class="cl-meta">
           <span class="cl-version">v1-coalesce-publish</span>
@@ -175,7 +187,6 @@
         </ul>
       </div>
 
-      <!-- Baseline -->
       <div class="cl-entry">
         <div class="cl-meta">
           <span class="cl-version">Pre-V1 baseline</span>
@@ -184,7 +195,7 @@
         <ul class="cl-items">
           <li>Initial GhostMap extension: TreeView wired, <code style="font-size:0.82em;color:var(--violet)">@ghost</code> annotation parser, foreground refresh scheduling.</li>
           <li>Basic anchor types: contextual, named, range.</li>
-          <li>MIT license. First commit.</li>
+          <li>Initial license. First commit.</li>
         </ul>
       </div>
 
@@ -195,7 +206,7 @@
     <div class="container">
       <h2>See the full iteration log.</h2>
       <p>Every round is documented in detail in the docs - rationale, files touched, and tests that lock the behaviour in.</p>
-      <a href="https://docs.ghostmap.dev" class="btn btn--outline btn--lg">Read the docs →</a>
+      <a href="https://ghostmap-docs.vercel.app/" class="btn btn--outline btn--lg">Read the docs →</a>
     </div>
   </section>
 </main>
@@ -214,23 +225,26 @@
         <li><a href="changelog.html">Changelog</a></li>
       </ul></div>
       <div class="footer__col"><h4>Resources</h4><ul>
-        <li><a href="https://docs.ghostmap.dev">Documentation</a></li>
-        <li><a href="https://docs.ghostmap.dev/get-started/instalacion">Quick start</a></li>
-        <li><a href="https://docs.ghostmap.dev/reference/sintaxis">Syntax reference</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/get-started/instalacion">Quick start</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/reference/sintaxis">Syntax reference</a></li>
       </ul></div>
       <div class="footer__col"><h4>Legal</h4><ul>
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Use</a></li>
         <li><a href="notices.html">Third-Party Notices</a></li>
+        <li>Free for personal, educational &amp; evaluation use</li>
+        <li>Commercial use needs a license</li>
+        <li>Legal inquiries: <a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
       </ul></div>
       <div class="footer__col"><h4>Community</h4><ul>
-        <li><a href="https://github.com/ghostmap" target="_blank">GitHub</a></li>
-        <li><a href="https://github.com/ghostmap/discussions" target="_blank">Discussions</a></li>
-        <li><a href="https://github.com/ghostmap/issues" target="_blank">Issues</a></li>
+        <li><a href="../index.html#support">Support GhostMap</a></li>
+        <li><a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
       </ul></div>
     </div>
     <div class="footer__bottom">
-      <span>MIT Licensed · Made with 💜 by developers</span>
+      <span>Free for personal, educational &amp; evaluation use · Commercial use needs a license</span>
       <span>© <span id="year">2026</span> GhostMap</span>
     </div>
   </div>

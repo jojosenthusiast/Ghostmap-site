@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GhostMap - Your code, mapped.</title>
-  <meta name="description" content="GhostMap transforms @ghost annotations into a live, navigable project map inside VS Code. Know your codebase at a glance." />
+  <meta name="description" content="GhostMap is a VS Code productivity tool that turns @ghost annotations into a live, navigable project map. Free for personal, educational, and evaluation use." />
   <link rel="icon" type="image/png" href="img/ghost-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://marxwellb.github.io/Ghostmap-site/" />
+  <link rel="canonical" href="https://ghostmap-liard.vercel.app/" />
   <meta name="theme-color" content="#080810" />
   <meta name="author" content="GhostMap contributors" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="GhostMap" />
   <meta property="og:title" content="GhostMap - Your code, mapped." />
   <meta property="og:description" content="A live, navigable map of your code inside VS Code. 19 languages. @ghost annotations. Zero telemetry." />
-  <meta property="og:url" content="https://marxwellb.github.io/Ghostmap-site/" />
+  <meta property="og:url" content="https://ghostmap-liard.vercel.app/" />
   <meta property="og:image" content="img/ghost-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="GhostMap - Your code, mapped." />
@@ -36,22 +36,14 @@
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Windows, macOS, Linux",
     "description": "A live, navigable map of your code inside VS Code. 19 languages. @ghost annotations. Zero telemetry.",
-    "url": "https://marxwellb.github.io/Ghostmap-site/",
-    "downloadUrl": "https://github.com/MarxWellB/genesis/releases",
+    "url": "https://ghostmap-liard.vercel.app/",
     "softwareVersion": "0.5.0",
     "softwareRequirements": "Visual Studio Code 1.85 or higher",
-    "license": "https://opensource.org/licenses/MIT",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
     "author": {
       "@type": "Organization",
       "name": "GhostMap contributors",
-      "url": "https://github.com/MarxWellB/genesis"
-    },
-    "isAccessibleForFree": true
+      "url": "https://ghostmap-liard.vercel.app/"
+    }
   }
   </script>
 </head>
@@ -60,7 +52,6 @@
 <a class="skip-link" href="#main">Skip to content</a>
 
 
-<!-- ═══ NAV ═══════════════════════════════════════════════ -->
 <header class="nav">
   <div class="container nav__inner">
     <a href="index.html" class="nav__brand">
@@ -74,18 +65,17 @@
         <li><a href="pages/how-it-works.html">How it works</a></li>
         <li><a href="pages/roadmap.html">Roadmap</a></li>
         <li><a href="pages/changelog.html">Changelog</a></li>
-        <li><a href="https://docs.ghostmap.dev" target="_blank" rel="noopener">Docs ↗</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/" target="_blank" rel="noopener">Docs ↗</a></li>
       </ul>
     </nav>
     <div class="nav__right">
-      <a href="pages/es/index.html" class="nav__lang">ES</a>
-      <a href="https://github.com/ghostmap" target="_blank" rel="noopener" class="btn btn--outline btn--sm">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10Z"/></svg>
-        GitHub
+      <a href="mailto:getghostmap@proton.me" class="btn btn--outline btn--sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>
+        Contact
       </a>
-      <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--sm">
+      <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--primary btn--sm">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2 9 9 4.5 6 2 7.5v9L4.5 18 9 15l8 7 5-2.4V4.4ZM9 14.2 5 11.5v-3L9 9.8Zm8 4.3-5.9-5.2L17 7.5Z"/></svg>
-        Install for VS Code
+        Install
       </a>
       <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -94,36 +84,39 @@
   </div>
 </header>
 
-<!-- ═══ HERO ═══════════════════════════════════════════════ -->
 <main id="main">
   <div class="container">
     <div class="hero-split">
       <div class="hero-split__content">
         <div class="hero__eyebrow">
           <span class="dot"></span>
-          V1 - Coming soon to VS Code Marketplace
+          V1 0.5.0 - Local VSIX today · GitHub Releases post-tag · Marketplace planned · Open VSX planned
         </div>
         <h1>Your code,<br /><em>mapped.</em></h1>
         <p class="hero__sub">
-          GhostMap turns <code style="font-family:var(--font-mono);color:var(--violet);font-size:0.9em">@ghost</code> annotations
-          into a live project map inside VS Code -
-          a Ghost Tree that reflects your code's real structure, updated as you type.
+          GhostMap keeps refactors, review notes, and architectural context visible inside VS Code,
+          anchored to the code they describe and updated as you type.
         </p>
         <div class="hero__actions">
-          <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--lg">
+          <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--primary btn--lg">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2 9 9 4.5 6 2 7.5v9L4.5 18 9 15l8 7 5-2.4V4.4ZM9 14.2 5 11.5v-3L9 9.8Zm8 4.3-5.9-5.2L17 7.5Z"/></svg>
-            Install for VS Code
+            Install &#8211; Local VSIX
           </a>
           <a href="pages/how-it-works.html" class="btn btn--outline btn--lg">How it works</a>
         </div>
+        <p style="margin-top:14px;font-size:0.78rem;color:var(--text-faint);max-width:520px">
+          GhostMap is currently installed from a locally built VSIX. GitHub
+          Releases are planned as the post-tag VSIX channel once a public
+          release exists. The VS Code Marketplace listing is planned and
+          depends on publisher onboarding; Open VSX is the planned bridge for
+          VSCodium and other Open VSX-compatible editors.
+        </p>
         <div class="hero__meta">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 9.5 8.5 2.5 9l5.4 4.7L6.2 21 12 17.3 17.8 21l-1.7-7.3L21.5 9l-7-.5Z"/></svg>
-          <strong style="color:var(--text-muted)">1.2k+</strong>
-          &nbsp;·&nbsp; MIT License &nbsp;·&nbsp; Open Source
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21 12 16 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg>
+          Free for personal, educational &amp; evaluation use &nbsp;·&nbsp; Commercial use needs a license
         </div>
       </div>
 
-      <!-- Ghost Tree mockup -->
       <div class="ghost-glow" style="position:relative; z-index:1">
         <div class="panel">
           <div class="panel__bar">
@@ -135,8 +128,7 @@
             <span class="panel__title">GHOSTMAP - auth.service.ts</span>
           </div>
           <div style="display:grid; grid-template-columns:220px 1fr">
-            <!-- sidebar tree -->
-            <div style="border-right:1px solid var(--border); padding:14px 0">
+            <div style="padding:14px 0">
               <div class="tree">
                 <div class="tree-row">
                   <svg class="icon-c" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
@@ -187,7 +179,6 @@
                 </div>
               </div>
             </div>
-            <!-- code panel -->
             <div style="padding:14px 0 14px">
               <div class="code">
 <span class="line"><span class="ln">1</span><span class="kw">export class</span> <span class="cls">AuthService</span> {</span>
@@ -217,7 +208,6 @@
     </div>
   </div>
 
-  <!-- ═══ CONCEPTS STRIP ════════════════════════════════════ -->
   <section class="section section--bordered">
     <div class="container">
       <div class="section__head">
@@ -267,22 +257,21 @@
           <div class="feat-card__icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
-          <h3>Ghost Threads <span class="feat-card__tag">v2</span></h3>
-          <p>Code discussions tied to a specific block. Context, decisions, and Slack threads - attached to exactly the code they describe.</p>
+          <h3>Ghost Threads <span class="feat-card__tag">planned, not shipped</span></h3>
+          <p>Planned per-block discussions for decisions and open questions, attached to the code they describe.</p>
         </div>
 
         <div class="feat-card">
           <div class="feat-card__icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
           </div>
-          <h3>Ghost Graph <span class="feat-card__tag">v2</span></h3>
-          <p>Visual flow maps that trace how variables, functions, and files connect - from declaration to last usage.</p>
+          <h3>Ghost Graph <span class="feat-card__tag">planned, not shipped</span></h3>
+          <p>Planned visual flow maps for how variables, functions, and files connect.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ MULTI-LANGUAGE ════════════════════════════════════ -->
   <section class="section section--bordered">
     <div class="container">
       <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center">
@@ -290,8 +279,8 @@
           <div class="section__label">Ghost Engine</div>
           <h2 class="section__title">19 languages.<br />One consistent map.</h2>
           <p class="section__desc" style="margin-bottom:24px">
-            GhostMap's language engine stacks LSP, Tree-sitter WASM, and regex fallback
-            so your Ghost Tree works regardless of what's installed.
+            GhostMap uses the best available extractor for each supported language,
+            then falls back gracefully when editor language services are unavailable.
           </p>
           <a href="pages/features.html#languages" class="btn btn--outline">See full support matrix →</a>
         </div>
@@ -322,12 +311,17 @@
             <span style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--amber)"></span>Best-effort</span>
             <span style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red)"></span>Top-level only</span>
           </div>
+          <p style="margin-top:14px;font-size:0.78rem;color:var(--text-faint);max-width:560px">
+            19 languages ship today. A separate language-pack expansion
+            workstream (~20 more languages) is on the roadmap but gated on
+            Tree-sitter grammar packaging, query validity, and fixture
+            coverage &#8211; it is not currently advertised as supported.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ SCREENSHOT ════════════════════════════════════════ -->
   <section class="section section--bordered">
     <div class="container">
       <div class="section__head section__head--center">
@@ -335,18 +329,17 @@
         <h2 class="section__title">What GhostMap looks like in your editor</h2>
       </div>
       <div class="feat-hero-screenshot ghost-glow" style="max-width:900px;margin:0 auto">
-        <img src="img/screenshot-vscode.png" loading="lazy" decoding="async" width="1800" height="1100" alt="GhostMap running in VS Code showing the Ghost Tree panel with multiple languages" />
+        <img src="img/screenshot-vscode.png" loading="lazy" decoding="async" width="1842" height="747" alt="GhostMap running in VS Code showing the Ghost Tree panel with multiple languages" />
       </div>
     </div>
   </section>
 
-  <!-- ═══ ROADMAP PREVIEW ═══════════════════════════════════ -->
   <section class="section section--bordered">
     <div class="container">
       <div class="section__head">
         <div class="section__label">Roadmap</div>
         <h2 class="section__title">Where GhostMap is going</h2>
-        <p class="section__desc">V1 is a focused tool for any dev. V2 adds collaboration and intelligence for teams.</p>
+        <p class="section__desc">V1 is a focused local VS Code tool: per-file Ghost Tree and local cache. V2 is the workspace-indexing direction, with team-oriented integrations sketched but not shipped.</p>
       </div>
       <div class="roadmap-split">
         <div class="roadmap-card roadmap-card--v1">
@@ -368,29 +361,29 @@
             <li>
               <span class="ring"></span>
               <div>
-                <h4>Ghost Comments <span class="vision-tag">invisible annotations</span></h4>
-                <p>Annotations move out of source code into the Ghost Index. Your code stays clean; GhostMap renders them as overlays.</p>
+                <h4>Ghost Comments <span class="vision-tag">planned, not shipped</span></h4>
+                <p>Future annotations could move out of source code into overlays while preserving context.</p>
               </div>
             </li>
             <li>
               <span class="ring"></span>
               <div>
-                <h4>Ghost Threads <span class="vision-tag">code discussions</span></h4>
-                <p>Per-block conversations - decisions, Slack context, and open questions - attached to the exact code they describe.</p>
+                <h4>Ghost Threads <span class="vision-tag">planned, not shipped</span></h4>
+                <p>Future per-block conversations for decisions and open questions.</p>
               </div>
             </li>
             <li>
               <span class="ring"></span>
               <div>
-                <h4>Ghost Graph <span class="vision-tag">code flow</span></h4>
-                <p>Visual graphs tracing variables and functions across files, from definition to last use.</p>
+                <h4>Ghost Graph <span class="vision-tag">planned, not shipped</span></h4>
+                <p>Future visual graphs tracing variables and functions across files.</p>
               </div>
             </li>
             <li>
               <span class="ring"></span>
               <div>
-                <h4>Agile integration <span class="vision-tag">enterprise</span></h4>
-                <p>Status changes flow to Jira. Sprint urgency surfaces in the Ghost Tree. Automatic commits on review approval.</p>
+                <h4>Agile integration <span class="vision-tag">planned, not shipped</span></h4>
+                <p>Future team integrations could connect status, urgency, and review context after explicit privacy review.</p>
               </div>
             </li>
           </ul>
@@ -402,23 +395,61 @@
     </div>
   </section>
 
-  <!-- ═══ FINAL CTA ══════════════════════════════════════════ -->
+  <section class="section section--bordered" id="support">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <div class="section__label">Support GhostMap</div>
+        <h2 class="section__title">Help GhostMap keep shipping.</h2>
+        <p class="section__desc">
+          GhostMap is a maintainer-led project. Voluntary support keeps the
+          extension, the docs, and the language pack expansion moving.
+          Support is voluntary and does <strong>not</strong> grant commercial
+          rights &mdash; commercial use needs a separate license.
+        </p>
+      </div>
+
+      <div class="support">
+        <div class="support__cta">
+          <div class="support__cta-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6 12 13 2 6"/></svg>
+          </div>
+          <h3 class="support__cta-title">Email the maintainer</h3>
+          <p class="support__cta-text">Voluntary support, commercial licensing, partnership questions, and direct support all go through one channel today.</p>
+          <a href="mailto:getghostmap@proton.me" class="btn btn--primary">getghostmap@proton.me</a>
+        </div>
+
+        <p class="support__future">
+          Possible future supporter platforms include Lemon Squeezy, Patreon, and Ko-fi. None are active today; they may be adopted later as voluntary processors.
+        </p>
+
+        <div class="support__note">
+          <strong>What support gets you.</strong>
+          Public acknowledgement (with your permission), supporter updates,
+          community / basic support, and early preview information on
+          upcoming work. Voluntary support does not grant company, commercial,
+          production, client, resale, white-label, or marketplace-republish
+          rights &mdash; those are handled separately under a written commercial
+          license via <a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-block">
     <div class="container">
       <h2>Start mapping your project today.</h2>
-      <p>Free, open source, and built for any developer. Install in seconds.</p>
+      <p>Free for personal, educational, and evaluation use. Install from a local VSIX today in supported VS Code workspaces. Commercial use requires a license &mdash; contact <a href="mailto:getghostmap@proton.me" style="color:var(--violet-bright)">getghostmap@proton.me</a>.</p>
       <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
-        <a href="vscode:extension/ghostmap.ghostmap" class="btn btn--primary btn--lg">
+        <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--primary btn--lg">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2 9 9 4.5 6 2 7.5v9L4.5 18 9 15l8 7 5-2.4V4.4ZM9 14.2 5 11.5v-3L9 9.8Zm8 4.3-5.9-5.2L17 7.5Z"/></svg>
-          Install for VS Code
+          Install &#8211; Local VSIX
         </a>
-        <a href="https://docs.ghostmap.dev" class="btn btn--outline btn--lg">Read the docs →</a>
+        <a href="https://ghostmap-docs.vercel.app/" class="btn btn--outline btn--lg">Read the docs →</a>
       </div>
     </div>
   </section>
 </main>
 
-<!-- ═══ FOOTER ════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
@@ -436,14 +467,15 @@
           <li><a href="pages/how-it-works.html">How it works</a></li>
           <li><a href="pages/roadmap.html">Roadmap</a></li>
           <li><a href="pages/changelog.html">Changelog</a></li>
+          <li><a href="#support">Support GhostMap</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h4>Resources</h4>
         <ul>
-          <li><a href="https://docs.ghostmap.dev">Documentation</a></li>
-          <li><a href="https://docs.ghostmap.dev/get-started/instalacion">Quick start</a></li>
-          <li><a href="https://docs.ghostmap.dev/reference/sintaxis">Syntax reference</a></li>
+          <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
+          <li><a href="https://ghostmap-docs.vercel.app/get-started/instalacion">Quick start</a></li>
+          <li><a href="https://ghostmap-docs.vercel.app/reference/sintaxis">Syntax reference</a></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -452,19 +484,23 @@
           <li><a href="pages/privacy.html">Privacy Policy</a></li>
           <li><a href="pages/terms.html">Terms of Use</a></li>
           <li><a href="pages/notices.html">Third-Party Notices</a></li>
+          <li>Free for personal, educational &amp; evaluation use</li>
+          <li>Commercial use needs a license</li>
+          <li>Legal inquiries: <a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h4>Community</h4>
         <ul>
-          <li><a href="https://github.com/ghostmap" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://github.com/ghostmap/discussions" target="_blank" rel="noopener">Discussions</a></li>
-          <li><a href="https://github.com/ghostmap/issues" target="_blank" rel="noopener">Issues</a></li>
+          <li><a href="#support">Support GhostMap</a></li>
+          <li><a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
+          <li><a href="https://ghostmap-docs.vercel.app/">Documentation</a></li>
+          <li><a href="mailto:getghostmap@proton.me">Troubleshooting (email)</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>MIT Licensed · Made with 💜 by developers</span>
+      <span>Free for personal, educational &amp; evaluation use · Commercial use needs a license</span>
       <span>© <span id="year">2026</span> GhostMap</span>
     </div>
   </div>
