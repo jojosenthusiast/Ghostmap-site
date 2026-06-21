@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GhostMap - Tu código, mapeado.</title>
+  <meta name="description" content="GhostMap es una extensión de productividad para VS Code que convierte anotaciones @ghost en un mapa de proyecto navegable. Gratis para uso personal, educativo y de evaluación." />
+  <link rel="icon" type="image/svg+xml" href="../img/ghost-logo.svg" />
+  <link rel="alternate icon" type="image/png" href="../img/ghost-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://ghostmap-liard.vercel.app/es/" />
+  <link rel="alternate" hreflang="en" href="https://ghostmap-liard.vercel.app/" />
+  <link rel="alternate" hreflang="es" href="https://ghostmap-liard.vercel.app/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://ghostmap-liard.vercel.app/" />
+  <meta name="theme-color" content="#080810" />
+  <meta name="author" content="GhostMap contributors" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GhostMap" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="GhostMap - Tu código, mapeado." />
+  <meta property="og:description" content="Un mapa navegable y en vivo de tu código dentro de VS Code. 19 lenguajes. Anotaciones @ghost. Sin telemetría." />
+  <meta property="og:url" content="https://ghostmap-liard.vercel.app/es/" />
+  <meta property="og:image" content="../img/ghost-logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="GhostMap - Tu código, mapeado." />
+  <meta name="twitter:description" content="Un mapa navegable y en vivo de tu código dentro de VS Code. 19 lenguajes. Anotaciones @ghost. Sin telemetría." />
+  <meta name="twitter:image" content="../img/ghost-logo.png" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand">
+      <img src="../img/ghost-logo.svg" alt="GhostMap" />
+      GhostMap
+    </a>
+    <nav>
+      <ul class="nav__links" id="primary-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/" target="_blank" rel="noopener">Documentación ↗</a></li>
+        <li><a href="../index.html">English site ↗</a></li>
+        <li><a href="#soporte">Soporte</a></li>
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <span class="nav__lang nav__lang--active" aria-current="true">ES</span>
+      <a href="../index.html" class="nav__lang" hreflang="en" aria-label="View in English">EN</a>
+      <a href="mailto:getghostmap@proton.me" class="btn btn--outline btn--sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>
+        Contacto
+      </a>
+      <a href="mailto:getghostmap@proton.me?subject=GhostMap%20VSIX%20request" class="btn btn--primary btn--sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2 9 9 4.5 6 2 7.5v9L4.5 18 9 15l8 7 5-2.4V4.4ZM9 14.2 5 11.5v-3L9 9.8Zm8 4.3-5.9-5.2L17 7.5Z"/></svg>
+        Solicitar VSIX
+      </a>
+      <button class="nav__mobile-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <div class="hero-split">
+      <div class="hero-split__content">
+        <div class="hero__eyebrow">
+          <span class="dot"></span>
+          V1 0.5.0 - Hoy: VSIX local · GitHub Releases planeado · Marketplace planeado · Open VSX planeado
+        </div>
+        <h1>Tu código,<br /><em>mapeado.</em></h1>
+        <p class="hero__sub">
+          GhostMap mantiene visibles dentro de VS Code los refactors, las notas
+          de revisión y el contexto arquitectónico, anclados al código que
+          describen y actualizados a medida que escribes.
+        </p>
+        <div class="hero__actions">
+          <a href="mailto:getghostmap@proton.me?subject=GhostMap%20VSIX%20request" class="btn btn--primary btn--lg">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2 9 9 4.5 6 2 7.5v9L4.5 18 9 15l8 7 5-2.4V4.4ZM9 14.2 5 11.5v-3L9 9.8Zm8 4.3-5.9-5.2L17 7.5Z"/></svg>
+            Solicitar VSIX por correo
+          </a>
+          <a href="https://ghostmap-docs.vercel.app/" class="btn btn--outline btn--lg">Leer la documentación</a>
+        </div>
+        <p style="margin-top:14px;font-size:0.78rem;color:var(--text-faint);max-width:520px">
+          Hoy GhostMap se instala a partir de un VSIX compilado localmente.
+          Los GitHub Releases son el canal post-tag previsto una vez que exista
+          una versión pública. La publicación en el VS Code Marketplace está
+          planificada y depende del proceso de alta de publisher; Open VSX es
+          el puente previsto para VSCodium y otros editores compatibles con
+          Open VSX. Ninguno de esos canales está activo todavía.
+        </p>
+        <div class="hero__meta">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21 12 16 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg>
+          Gratis para uso personal, educativo y de evaluación &nbsp;·&nbsp; El uso comercial requiere licencia escrita
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__label">Qué es GhostMap</div>
+        <h2 class="section__title">Estructura de proyecto, dentro de tu código</h2>
+        <p class="section__desc">
+          GhostMap es una extensión de Visual Studio Code que convierte
+          comentarios estructurados <code style="color:var(--violet)">@ghost</code>
+          en un mapa navegable: un árbol semántico con tus clases, funciones,
+          anchors y regiones, anclado al código real y actualizado al instante.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feat-card">
+          <h3>Ghost Tree</h3>
+          <p>El mapa en vivo de tu archivo. Símbolos y anchors organizados por la estructura real del código, no por carpetas ni por tu memoria.</p>
+        </div>
+        <div class="feat-card">
+          <h3>Ghost Anchors</h3>
+          <p>Anchors con nombre (<code style="color:var(--violet)">#seguridad</code>) crean nodos independientes. Los anchors contextuales se enganchan en silencio al símbolo más cercano.</p>
+        </div>
+        <div class="feat-card">
+          <h3>Ghost Index</h3>
+          <p>Motor de carga. Persiste el árbol de cada archivo para que GhostMap cargue en milisegundos al volver a abrir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--bordered" id="instalacion">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__label">Instalación · Acceso actual</div>
+        <h2 class="section__title">Cómo obtener GhostMap hoy</h2>
+        <p class="section__desc">
+          GhostMap aún no está publicado en marketplaces. La forma actual de
+          obtenerlo es un VSIX local compilado a pedido.
+        </p>
+      </div>
+
+      <div class="support">
+        <div class="support__cta">
+          <div class="support__cta-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6 12 13 2 6"/></svg>
+          </div>
+          <h3 class="support__cta-title">Solicitar el VSIX</h3>
+          <p class="support__cta-text">
+            Escríbenos a
+            <a href="mailto:getghostmap@proton.me?subject=GhostMap%20VSIX%20request" style="color:var(--violet-bright)">getghostmap@proton.me</a>
+            indicando tu caso de uso y te enviamos el VSIX y las instrucciones
+            de instalación. Es el mismo binario que produce el repositorio.
+          </p>
+          <a href="mailto:getghostmap@proton.me?subject=GhostMap%20VSIX%20request" class="btn btn--primary">getghostmap@proton.me</a>
+        </div>
+
+        <div class="support__note">
+          <strong>Canales planificados (todavía no activos).</strong>
+          GitHub Releases como canal post-tag, Visual Studio Code Marketplace
+          y Open VSX están en la hoja de ruta y dependen del alta de publisher
+          y de procesos administrativos externos. No publicamos enlaces falsos:
+          cuando un canal se active, va a aparecer aquí y en la documentación
+          oficial. Hasta entonces, el VSIX local sigue siendo la vía oficial.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--bordered">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__label">Documentación</div>
+        <h2 class="section__title">Toda la documentación, en español</h2>
+        <p class="section__desc">
+          La documentación detallada de GhostMap está en español: requisitos,
+          instalación, primeros pasos, sintaxis <code style="color:var(--violet)">@ghost</code>,
+          referencia de settings, arquitectura y estado del proyecto.
+          Existe además una sección breve en inglés con un resumen de inicio
+          rápido y la información legal/de soporte.
+        </p>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="https://ghostmap-docs.vercel.app/" class="btn btn--primary">Documentación (ES) →</a>
+        <a href="https://ghostmap-docs.vercel.app/get-started/instalacion" class="btn btn--outline">Guía de instalación</a>
+        <a href="https://ghostmap-docs.vercel.app/reference/sintaxis" class="btn btn--outline">Referencia de sintaxis</a>
+        <a href="https://ghostmap-docs.vercel.app/en/overview" class="btn btn--outline">English overview ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--bordered" id="licencia">
+    <div class="container">
+      <div class="section__head">
+        <div class="section__label">Licencia · Resumen</div>
+        <h2 class="section__title">Licencia no comercial (resumen)</h2>
+        <p class="section__desc">
+          GhostMap se distribuye bajo la <strong>GhostMap Free Non-Commercial License</strong>.
+          Este es un resumen informativo en español; el texto legal definitivo
+          es el archivo <code>LICENSE</code> en inglés que se entrega con la
+          extensión y prevalece sobre esta página.
+        </p>
+      </div>
+      <div class="roadmap-split">
+        <div class="roadmap-card roadmap-card--v1">
+          <div class="roadmap-card__label">Permitido sin cargo</div>
+          <ul class="checklist">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Uso personal</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Uso educativo</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Evaluación y pruebas</li>
+          </ul>
+        </div>
+        <div class="roadmap-card roadmap-card--v2">
+          <div class="roadmap-card__label">Requiere autorización escrita</div>
+          <ul class="vision-list">
+            <li><span class="ring"></span><div><h4>Uso comercial</h4><p>Empresa, producción, generación de ingresos, clientes, reventa, white-label, republicación en marketplaces, productos competidores.</p></div></li>
+            <li><span class="ring"></span><div><h4>Consultas de licenciamiento</h4><p>Escribe a <a href="mailto:getghostmap@proton.me" style="color:var(--violet-bright)">getghostmap@proton.me</a>.</p></div></li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:18px;font-size:0.85rem;color:var(--text-faint)">
+        Los componentes de terceros (web-tree-sitter y los grammars de
+        Tree-sitter incluidos) conservan su licencia original; ver el archivo
+        <code>THIRD_PARTY_NOTICES.txt</code> incluido en la extensión.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--bordered" id="soporte">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <div class="section__label">Apoyar a GhostMap</div>
+        <h2 class="section__title">Apoyo voluntario y contacto</h2>
+        <p class="section__desc">
+          GhostMap es un proyecto liderado por su mantenedor. El apoyo
+          voluntario ayuda a seguir publicando extensión, documentación y
+          ampliación de lenguajes.
+        </p>
+      </div>
+
+      <div class="support">
+        <div class="support__cta">
+          <div class="support__cta-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6 12 13 2 6"/></svg>
+          </div>
+          <h3 class="support__cta-title">Contacto con el mantenedor</h3>
+          <p class="support__cta-text">
+            Hoy todas las consultas (soporte voluntario, licenciamiento
+            comercial, alianzas y soporte directo) pasan por un único canal.
+          </p>
+          <a href="mailto:getghostmap@proton.me" class="btn btn--primary">getghostmap@proton.me</a>
+        </div>
+
+        <p class="support__future">
+          Las plataformas de apoyo previstas (por ejemplo Lemon Squeezy,
+          Patreon o Ko-fi) todavía no están activas. Pueden adoptarse en el
+          futuro como procesadores voluntarios; cuando exista un enlace
+          oficial, va a aparecer aquí. No publicamos enlaces que no resuelvan.
+        </p>
+
+        <div class="support__note">
+          <strong>Qué incluye el apoyo voluntario.</strong>
+          Reconocimiento público (con tu permiso), actualizaciones para
+          quienes apoyan, soporte comunitario/básico e información temprana
+          sobre el trabajo en curso. El apoyo voluntario <strong>no</strong>
+          otorga derechos comerciales, de empresa, producción, clientes,
+          reventa, white-label ni republicación en marketplaces. Esos usos se
+          gestionan por separado bajo una licencia comercial escrita vía
+          <a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <img src="../img/ghost-logo.svg" alt="GhostMap" />
+          GhostMap
+        </div>
+        <p class="footer__tagline">Convierte anotaciones de código en mapas de proyecto.</p>
+        <p class="footer__tagline" style="margin-top:8px"><a href="../index.html" hreflang="en">English version</a></p>
+      </div>
+      <div class="footer__col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="index.html">Inicio (ES)</a></li>
+          <li><a href="../index.html">Home (EN)</a></li>
+          <li><a href="https://ghostmap-docs.vercel.app/roadmap/vision-v2">Roadmap</a></li>
+          <li><a href="https://ghostmap-docs.vercel.app/status/estado-del-proyecto">Estado del proyecto</a></li>
+          <li><a href="#soporte">Apoyar a GhostMap</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Documentación</h4>
+        <ul>
+          <li><a href="https://ghostmap-docs.vercel.app/">Documentación (ES)</a></li>
+          <li><a href="https://ghostmap-docs.vercel.app/get-started/instalacion">Instalación</a></li>
+          <li><a href="https://ghostmap-docs.vercel.app/reference/sintaxis">Referencia de sintaxis</a></li>
+          <li><a href="https://ghostmap-docs.vercel.app/en/overview">English overview</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../pages/privacy.html">Privacy Policy (EN)</a></li>
+          <li><a href="../pages/terms.html">Terms of Use (EN)</a></li>
+          <li><a href="../pages/notices.html">Third-Party Notices (EN)</a></li>
+          <li>Documentos legales en inglés definitivo</li>
+          <li>Consultas legales: <a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Comunidad</h4>
+        <ul>
+          <li><a href="#soporte">Apoyar a GhostMap</a></li>
+          <li><a href="mailto:getghostmap@proton.me">getghostmap@proton.me</a></li>
+          <li><a href="https://ghostmap-docs.vercel.app/">Documentación</a></li>
+          <li><a href="mailto:getghostmap@proton.me">Reportar un problema (email)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>Gratis para uso personal, educativo y de evaluación · El uso comercial requiere licencia escrita</span>
+      <span>© <span id="year">2026</span> GhostMap</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GhostMap - Your code, mapped.</title>
   <meta name="description" content="GhostMap is a VS Code productivity tool that turns @ghost annotations into a live, navigable project map. Free for personal, educational, and evaluation use." />
-  <link rel="icon" type="image/png" href="img/ghost-logo.png" />
+  <link rel="icon" type="image/svg+xml" href="img/ghost-logo.svg" />
+  <link rel="alternate icon" type="image/png" href="img/ghost-logo.png" />
+  <link rel="alternate" hreflang="es" href="https://ghostmap-liard.vercel.app/es/" />
+  <link rel="alternate" hreflang="en" href="https://ghostmap-liard.vercel.app/" />
+  <link rel="alternate" hreflang="x-default" href="https://ghostmap-liard.vercel.app/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -21,7 +25,7 @@
   <meta property="og:description" content="A live, navigable map of your code inside VS Code. 19 languages. @ghost annotations. Zero telemetry." />
   <meta property="og:url" content="https://ghostmap-liard.vercel.app/" />
   <meta property="og:image" content="img/ghost-logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="GhostMap - Your code, mapped." />
   <meta name="twitter:description" content="A live, navigable map of your code inside VS Code. 19 languages. @ghost annotations. Zero telemetry." />
   <meta name="twitter:image" content="img/ghost-logo.png" />
@@ -55,7 +59,7 @@
 <header class="nav">
   <div class="container nav__inner">
     <a href="index.html" class="nav__brand">
-      <img src="img/ghost-logo.png" alt="GhostMap" />
+      <img src="img/ghost-logo.svg" alt="GhostMap" />
       GhostMap
     </a>
     <nav>
@@ -69,6 +73,8 @@
       </ul>
     </nav>
     <div class="nav__right">
+      <a href="es/index.html" class="nav__lang" hreflang="es" aria-label="Ver en español">ES</a>
+      <span class="nav__lang nav__lang--active" aria-current="true">EN</span>
       <a href="mailto:getghostmap@proton.me" class="btn btn--outline btn--sm">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>
         Contact
@@ -455,9 +461,10 @@
     <div class="footer__grid">
       <div>
         <div class="footer__brand">
-          <img src="img/ghost-logo.png" alt="GhostMap" />
+          <img src="img/ghost-logo.svg" alt="GhostMap" />
           GhostMap
         </div>
+        <p class="footer__tagline" style="margin-top:8px"><a href="es/index.html" hreflang="es">Versión en español</a></p>
         <p class="footer__tagline">Turn code annotations into project maps.</p>
       </div>
       <div class="footer__col">

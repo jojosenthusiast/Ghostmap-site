@@ -144,6 +144,7 @@ a { color: inherit; }
   transition: color 0.15s, border-color 0.15s;
 }
 .nav__lang:hover { color: var(--text-muted); border-color: var(--violet); }
+.nav__lang--active { color: var(--text); border-color: var(--violet); cursor: default; }
 
 .nav__mobile-toggle {
   display: none;

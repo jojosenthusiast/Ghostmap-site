@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Changelog - GhostMap</title>
   <meta name="description" content="GhostMap version history. Every fix, every feature, every round." />
-  <link rel="icon" type="image/png" href="../img/ghost-logo.png" />
+  <link rel="icon" type="image/svg+xml" href="../img/ghost-logo.svg" />
+  <link rel="alternate icon" type="image/png" href="../img/ghost-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
   <meta property="og:description" content="GhostMap release notes. Every fix, every feature, every round, with the reasoning behind it." />
   <meta property="og:url" content="https://ghostmap-liard.vercel.app/pages/changelog.html" />
   <meta property="og:image" content="../img/ghost-logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Changelog - GhostMap" />
   <meta name="twitter:description" content="GhostMap release notes. Every fix, every feature, every round, with the reasoning behind it." />
   <meta name="twitter:image" content="../img/ghost-logo.png" />
@@ -39,7 +40,7 @@
     .cl-badge--pre { background: var(--violet-dim); color: var(--violet-bright); }
     .cl-items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
     .cl-items li { display: flex; gap: 10px; font-size: 0.9rem; color: var(--text-muted); }
-    .cl-items li::before { content: '→'; color: var(--violet); flex-shrink: 0; }
+    .cl-items li::before { content: '&rarr;'; color: var(--violet); flex-shrink: 0; }
     .cl-section { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); margin: 16px 0 8px; }
   </style>
 </head>
@@ -51,7 +52,7 @@
 <header class="nav">
   <div class="container nav__inner">
     <a href="../index.html" class="nav__brand">
-      <img src="../img/ghost-logo.png" alt="GhostMap" />
+      <img src="../img/ghost-logo.svg" alt="GhostMap" />
       GhostMap
     </a>
     <nav>
@@ -61,7 +62,7 @@
         <li><a href="how-it-works.html">How it works</a></li>
         <li><a href="roadmap.html">Roadmap</a></li>
         <li><a href="changelog.html">Changelog</a></li>
-        <li><a href="https://ghostmap-docs.vercel.app/" target="_blank" rel="noopener">Docs ↗</a></li>
+        <li><a href="https://ghostmap-docs.vercel.app/" target="_blank" rel="noopener">Docs &#8599;</a></li>
       </ul>
     </nav>
     <div class="nav__right">
@@ -130,7 +131,7 @@
 
         <div class="cl-section">Performance</div>
         <ul class="cl-items">
-          <li><strong>LSP timeout reduced</strong> - 1500 ms → 800 ms. Halves the cold-LSP stall on first open.</li>
+          <li><strong>LSP timeout reduced</strong> - 1500 ms &rarr; 800 ms. Halves the cold-LSP stall on first open.</li>
           <li><strong>Small-file fast path</strong> - Files under 500 lines with an active LSP skip Tree-sitter + regex entirely, saving up to 1.2 s of WASM load.</li>
           <li><strong>Cold-start fast path (Ghost Index)</strong> - Persisted snapshots now load as trusted on activate. First open of a known file: tree paints in &lt;50 ms instead of 5-35 s.</li>
           <li><strong>Tiny file bypass</strong> - Files under 50 lines skip the 200 ms tab-spam backpressure window.</li>
@@ -206,7 +207,7 @@
     <div class="container">
       <h2>See the full iteration log.</h2>
       <p>Every round is documented in detail in the docs - rationale, files touched, and tests that lock the behaviour in.</p>
-      <a href="https://ghostmap-docs.vercel.app/" class="btn btn--outline btn--lg">Read the docs →</a>
+      <a href="https://ghostmap-docs.vercel.app/" class="btn btn--outline btn--lg">Read the docs &rarr;</a>
     </div>
   </section>
 </main>
@@ -215,7 +216,7 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <div class="footer__brand"><img src="../img/ghost-logo.png" alt="GhostMap" /> GhostMap</div>
+        <div class="footer__brand"><img src="../img/ghost-logo.svg" alt="GhostMap" /> GhostMap</div>
         <p class="footer__tagline">Turn code annotations into project maps.</p>
       </div>
       <div class="footer__col"><h4>Product</h4><ul>
@@ -244,8 +245,8 @@
       </ul></div>
     </div>
     <div class="footer__bottom">
-      <span>Free for personal, educational &amp; evaluation use · Commercial use needs a license</span>
-      <span>© <span id="year">2026</span> GhostMap</span>
+      <span>Free for personal, educational &amp; evaluation use &middot; Commercial use needs a license</span>
+      <span>&copy; <span id="year">2026</span> GhostMap</span>
     </div>
   </div>
 </footer>
